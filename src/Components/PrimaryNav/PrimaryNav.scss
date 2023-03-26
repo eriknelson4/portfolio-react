@@ -1,0 +1,5 @@
+@import '../../Styles/variables';
+
+.primary-nav { background-color:#000; color:#fff; padding:1rem; text-align:right;
+  li { display:inline-flex; font-size:1.8rem; font-weight:600; margin-inline:1em; text-transform:uppercase; vertical-align:middle; }
+}

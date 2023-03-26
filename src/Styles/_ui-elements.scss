@@ -1,0 +1,37 @@
+@import './variables';
+
+// User Interface Elements
+
+$transition: 0.25s ease-in-out;
+
+button { display:inline-table; transition:background-color $transition, fill $transition;
+  &.block { font-size:2rem; border:2px solid $dk-gray; padding:0.25em 1em; margin-right:0.5em; border-radius:0.25em; text-transform:uppercase; font-weight:600;
+    &.solid { background-color:$dk-gray; color:#fff; }
+    &.ghost { background-color:transparent; color:$dk-gray; }
+    &:hover, &:focus { text-decoration:underline; }
+  }
+  &.icon { width:2.4rem; height:2.4rem; display:inline-block; margin-left:0.5em; border:none;
+    svg { width:100%; height:auto; fill:$lt-gray; }
+    &:hover, &:focus {
+      svg { fill:$dk-gray; }
+    }
+  }
+}
+
+// Headings
+
+h1, h2, h3 { font-weight:600; text-transform:uppercase; margin-bottom:1.2rem; padding:0; }
+h1 { font-size:4.8rem; }
+h2 { font-size:3.6rem; }
+h3 { font-size:2.4rem; }
+
+// Body Text
+
+p { font-size:2.4rem;
+  strong { font-weight:600; }
+  em { text-decoration:underline; }
+}
+
+a { font-size:inherit; font-weight:600; text-decoration:underline;
+  &:hover, &:focus { text-decoration:none; }
+}
