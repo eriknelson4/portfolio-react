@@ -72,8 +72,6 @@ export const UIProvider = ({ children }) => {
     return initial;
   }
 
-
-
   return (
     <UIContext.Provider value={{
       handleModal,
