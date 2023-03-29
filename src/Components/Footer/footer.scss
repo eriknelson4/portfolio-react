@@ -1,5 +1,5 @@
 @import '../../Styles/variables';
 
-footer { position:fixed; bottom:0; width:100%; background-color:$dk-gray; color:#fff; padding:1rem 2rem;
+footer { position:fixed; bottom:0; width:100%; max-width:1920px; background-color:$dk-gray; color:#fff; padding:1rem 2rem;
   p { font-size:1.8rem; text-align:right; }
 }

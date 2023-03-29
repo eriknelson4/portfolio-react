@@ -4,7 +4,7 @@ import App from './App';
 import { UIProvider } from './Context/UIContext';
 import { BrowserRouter } from 'react-router-dom';
 import { ModalScreen } from './Components/Modals/ModalScreen';
-import './index.scss';
+import './Styles/index.scss';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

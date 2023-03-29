@@ -1,0 +1,12 @@
+@import '../../Styles/variables';
+
+#about {
+   .column-wrap { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); grid-gap:2em; width:83.3%; margin:0 auto;
+    @media screen and (max-width:959px) { grid-template-columns:minmax(0, 1fr); }
+  }
+  .tools-wrap { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+    .tool { padding:2rem;
+      img { max-width:100%; display:block; height:auto; }
+    }
+  }
+}

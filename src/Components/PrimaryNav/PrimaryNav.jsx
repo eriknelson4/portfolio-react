@@ -1,13 +1,12 @@
 import { useUI } from '../../Context/UIContext';
 import UserGlyph from '../../Components/UserGlyph/UserGlyph';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './PrimaryNav.scss';
 import { Modal } from '../Modals/Modal';
 import { UserModal } from '../UserModal/UserModal';
 
 const PrimaryNav = () => {
   const { userRole, primaryNavOptions, handleModal } = useUI();
-
 
   return (
     <>
@@ -18,7 +17,7 @@ const PrimaryNav = () => {
               if (item.roles.includes(userRole)) {
                 return (
                   <li key={ i }>
-                    <Link to={ item.url }>{item.title}</Link>
+                    <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={ item.url }>{item.title}</NavLink>
                   </li>
                 )
               }

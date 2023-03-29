@@ -16,8 +16,8 @@ export const UIProvider = ({ children }) => {
       roles: ['guest', 'user', 'admin']
     },
     {
-      title:'About Me',
-      url:'/about',
+      title:'Skills',
+      url:'/skills',
       roles: ['guest', 'user', 'admin']
     },
     {

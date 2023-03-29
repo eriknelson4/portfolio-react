@@ -4,6 +4,7 @@ import About from './Components/About/About';
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Admin from "./Components/Admin/Admin";
 import Contact from './Components/Contact/Contact';
+import Skills from './Components/Skills/Skills';
 import { useUI } from './Context/UIContext';
 import ProtectedRoute from "./Components/ProtectedRoute";
 
@@ -12,8 +13,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/" element={<About />} />
+      <Route path="/skills" element={<Skills />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/admin"
