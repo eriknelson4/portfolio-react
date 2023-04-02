@@ -35,7 +35,7 @@ const About = () => {
               skills.map((skill, i) => {
                 return (
                   <div key={ i } className="tool">
-                    <img src={ '/' + skill.imgurl } alt={ skill.title } title={ skill.title } width="300" height="300"/>
+                    <img src={ '/skills/' + skill.imgurl } alt={ skill.title } title={ skill.title } width="300" height="300"/>
                   </div>
                 )
               })

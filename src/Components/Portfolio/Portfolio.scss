@@ -1,0 +1,39 @@
+@import '../../Styles/variables';
+
+#portfolio {
+
+  h2 { text-align:center; margin-bottom:2rem; }
+  p { max-width:40%; padding:0 2rem; text-align:center; margin:0 auto 4rem auto;
+    @media screen and (max-width:1279px) { width:calc(100% - 40px); max-width:640px; }
+  }
+
+  .main-items { display:grid; width:83.3%; margin:0 auto 8em auto;
+    grid-template-columns:repeat(5, minmax(0, 1fr));
+    @media screen and (max-width:1599px) { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+    @media screen and (max-width:1279px) { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+    @media screen and (max-width:767px) { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    @media screen and (min-width:480px) {
+      &:hover, &:focus-within {
+        .item { opacity:0.5; }
+      }
+    }
+    @media screen and (max-width:479px) {
+      width:100%;
+    }
+    .item { position:relative; background-color:rgba(0,0,0,0.8); transform-origin:center center; transition:all 0.25s ease-in-out; border:none; padding:0; outline:none;
+      &:hover, &:focus-within { opacity:1;
+        div { opacity:1; }
+      }
+      a { text-decoration:none; outline:none; }
+      img { display:block; width:100%;
+        max-width:100%; display:block; height:auto;
+      }
+      div { opacity:0; transition:opacity ease-in-out 0.3s; position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); box-sizing:border-box; padding:1rem; display:grid; align-content:center;
+        span { font-size:2rem; text-align:center; text-decoration:none; color:#fff; line-height:1.2em; display:table; margin:0 auto;
+          &.project-title { font-weight:bold; margin-bottom:0.2em; padding-bottom:0.2em; border-bottom:1px #ccc solid; text-transform:uppercase; }
+          &.tech { margin:0.1em auto 0 auto; padding-top:0.1em; display:table; color:$highlight; }
+        }
+      }
+    }
+  }
+}

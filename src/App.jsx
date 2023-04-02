@@ -1,5 +1,5 @@
+import { useEffect } from 'react';
 import { Route, Routes } from "react-router-dom";
-import Main from "./Components/Main/Main";
 import About from './Components/About/About';
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Admin from "./Components/Admin/Admin";

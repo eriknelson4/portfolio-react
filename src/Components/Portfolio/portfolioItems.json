@@ -1,0 +1,100 @@
+[
+  {
+    "id":0,
+    "imgUrl":"/projects/migration-map.jpg" ,
+    "title":"Perky Pet | Hummingbird Migration Map",
+    "tech":"JS, Node, Google Maps, Cloud Functions, Firebase, HTML, CSS",
+    "url":"https://www.perkypet.com/advice/bird-watching/hummingbird-migration",
+    "description":"This web app allows users to submit humingbird sightings, which get displayed on a map. The app uses Google Cloud resources such as Cloud Functions (written in Node) and a Firestore database to maintain records. It also allows user submitted images stored in Cloud Firestore. Images go through an approval process built in Microsoft Power Automate, which exchanges API calls with Google Cloud.",
+    "images":[
+      "/projects/migration-map/pp-migration-map-1.jpg",
+      "/projects/migration-map/pp-migration-map-2.jpg",
+      "/projects/migration-map/pp-migration-map-3.jpg",
+      "/projects/migration-map/pp-migration-map-4.jpg"
+    ]
+  },
+  {
+    "id":1,
+    "imgUrl":"/projects/vlink-configurator.jpg" ,
+    "title":"VLINK | Product Configurator",
+    "tech":"JS, Magento APIs, HTML, CSS",
+    "url":"https://vlink.victorpest.com/configurator",
+    "description":"Web application that assists user in building and pricing a pest control system. Uses API calls to Magento to check pricing and stock, as well as enforce some business rules. User can add configured system to their cart.",
+    "images": [
+      "/projects/configurator/vl-configurator-1.jpg",
+      "/projects/configurator/vl-configurator-2.jpg"
+    ]
+  },
+  {
+    "id":2,
+    "imgUrl":"/projects/victor-solution-finder.jpg" ,
+    "title":"Victor | Solution Finder",
+    "tech":"JS, HTML, CSS",
+    "url":"https://www.victorpest.com/solution-finder",
+    "description":"hTis collection of pages allows users to find the best pest control option based on the pest problem they have. The pages use JavaScript for multiple UI elements/widgets.",
+    "images": [
+      "/projects/vp-sf/vp-solution-finder-1.jpg",
+      "/projects/vp-sf/vp-solution-finder-2.jpg"
+    ]
+  },
+  {
+    "id":3,
+    "imgUrl":"/projects/flexports.jpg" ,
+    "title":"Perky-Pet | Flexports",
+    "tech":"JS, HTML, CSS",
+    "url":"https://www.perkypet.com/flexports",
+    "description":"Product landing page, responsive design, product slider, customized embedded, responsive video.",
+    "images": [
+      "/projects/flexport/pp-flexport-1.jpg",
+      "/projects/flexport/pp-flexport-2.jpg",
+      "/projects/flexport/pp-flexport-3.jpg"
+    ]
+  },
+  {
+    "id":4,
+    "imgUrl":"/projects/repellents.jpg" ,
+    "title":"Safer Brand | Repellents",
+    "tech":"JS, HTML, CSS",
+    "url":"https://www.saferbrand.com/repellents",
+    "description":"Product category landing page. Responsive HTML.",
+    "images": [
+      "/projects/repellents/sb-repellents-1.jpg"
+    ]
+  },
+  {
+    "id":5,
+    "imgUrl":"/projects/victor-smart-kill.jpg" ,
+    "title":"Victor | Smart-Kill Traps",
+    "tech":"JS, HTML, CSS",
+    "url":"https://www.victorpest.com/smart-kill",
+    "description":"Product landing page, responsive HTML, JavaScript UI elements.<",
+    "images": [
+      "/projects/smart-kill/vp-sk-1.jpg",
+      "/projects/smart-kill/vp-sk-2.jpg"
+    ]
+  },
+  {
+    "id":6,
+    "imgUrl":"/projects/victor-trap-repel-monitor.jpg" ,
+    "title":"Victor | Learning Center",
+    "tech":"JS, HTML, CSS",
+    "url":"https://www.victorpest.com/advice",
+    "description":"Collection of pages about rodent pests and products. Responsive HTML, JavaScript UI elements.",
+    "images": [
+      "/projects/vp-lc/vp-lc-1.jpg",
+      "/projects/vp-lc/vp-lc-2.jpg",
+      "/projects/vp-lc/vp-lc-3.jpg"
+    ]
+  },
+  {
+    "id":7,
+    "imgUrl":"/projects/vlink-pricing.jpg" ,
+    "title":"VLINK | Pricing",
+    "tech":"JS, HTML, CSS, Magento",
+    "url":"https://vlink.victorpest.com/pricing",
+    "description":"Pricing for product bundles. Uses Magento API calls for current product pricing, and response HTML, JavaScript UI elements.<",
+    "images": [
+      "/projects/vl-pricing/vl-pricing-1.jpg"
+    ]
+  }
+]

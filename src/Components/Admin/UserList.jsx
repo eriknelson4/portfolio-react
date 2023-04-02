@@ -62,6 +62,8 @@ const Admin = () => {
     <>
       <div className="user-list">
 
+        <h2>Users</h2>
+
         <input className="filter" onChange={ (e) => { setFilter(e.currentTarget.value) } } value={ filter } type="text" />
 
         <Pagination
