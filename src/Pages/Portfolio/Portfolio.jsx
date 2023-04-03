@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Modal } from '../Modals/Modal';
+import { Modal } from '../../Components/Modals/Modal';
 import { useUI } from '../../Context/UIContext';
 import Standard from '../../Templates/Standard';
 import PortfolioItem from './PortfolioItem';
 import PortfolioModal from '../../Components/PortfolioModal/PortfolioModal';
 import portfolioItems from './portfolioItems.json';
-import '../Modals/ModalScreen';
 
 import './Portfolio.scss';
 

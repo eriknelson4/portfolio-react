@@ -1,6 +1,6 @@
 @import '../../Styles/variables';
 
-#portfolio-modal { max-width:960px; width:50vw; border:none; ;
+#portfolio-modal { max-width:960px; width:50vw; border:none; min-width:440px;
   .modal-content { padding:0; }
   .modal-close { z-index:100; }
 

@@ -1,10 +1,12 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PrimaryNav from "../Components/PrimaryNav/PrimaryNav";
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/footer";
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import AdminSideMenu from "../Components/AdminSideMenu/AdminSideMenu";
+import './AdminTemplate.scss';
 
-const Standard = ({ id, children }) => {
+const AdminTemplate = ({ id, children }) => {
 
   let location = useLocation();
 
@@ -41,12 +43,15 @@ const Standard = ({ id, children }) => {
     <>
       <PrimaryNav />
       <Header />
-      <main id={ id }>
-        { children }
+      <main className="admin" id={ id }>
+        <AdminSideMenu />
+        <section className="main-content">
+          { children }
+        </section>
       </main>
       <Footer />
     </>
   );
 }
 
-export default Standard;
+export default AdminTemplate;

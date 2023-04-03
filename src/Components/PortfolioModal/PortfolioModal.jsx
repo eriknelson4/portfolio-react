@@ -71,7 +71,6 @@ const PortfolioModal = ({ currentModal }) => {
     return null;
   }
 
-
 }
 
 export default PortfolioModal;

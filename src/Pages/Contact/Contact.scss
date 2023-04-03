@@ -35,9 +35,6 @@
           &:hover, *:focus { outline:$highlight 2px solid; }
         }
       }
-      button { background-color:$highlight; color:#000; display:table; width:auto; font-size:2rem; font-weight:bold; padding:1rem 2rem; text-transform:uppercase; border-radius:1rem;
-        @media screen and (max-width:539px) { font-size:3rem; }
-      }
     }
   }
 }

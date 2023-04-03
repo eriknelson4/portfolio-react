@@ -43,9 +43,9 @@ const Pagination = ({ setUsersPerPage, usersPerPage, totalUsers, currentPage, pa
         &laquo;
       </button>
       {
-        numberArray.map((number) => {
+        numberArray.map((number, i) => {
           if (number == 0) {
-            return ( <span className="ellipsis">...</span> )
+            return ( <span key={ `ellipsis-${ i }` } className="ellipsis">...</span> )
           }
           return (
             <button key={ number } onClick={ () => paginate(number) } className="page-link short" aria-selected={ (currentPage == number) }>

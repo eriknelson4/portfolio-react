@@ -143,7 +143,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="field">
-                <button className="button is-primary" type="Submit">Submit</button>
+                <button className="block solid" type="Submit">Submit</button>
               </div>
             </form>
           </div>

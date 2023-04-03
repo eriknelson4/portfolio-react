@@ -1,5 +1,5 @@
 import Standard from '../../Templates/Standard';
-import './About.scss';
+import './Home.scss';
 
 const About = () => {
 

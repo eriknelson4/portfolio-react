@@ -1,39 +1,25 @@
 import { useState, useEffect } from 'react';
-import Pagination from './Pagination';
+import Pagination from '../Pagination/Pagination';
 import { useUI } from '../../Context/UIContext';
 import { Modal } from '../Modals/Modal';
+import UserRow from './UserRow';
 import EditUserModal from '../EditUserModal/EditUserModal';
 import axios from 'axios';
-import { MdOutlineEdit } from 'react-icons/md';
-import './Admin.scss';
+import schema from '../..//Data/UserTableSchema.json';
 
 const Admin = () => {
   const { handleModal } = useUI();
 
   const [ users, setUsers ] = useState([]);
-  // const [ loading, setLoading ] = useState(false);
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ usersPerPage, setUsersPerPage ] = useState(10);
   const [ filter, setFilter ] = useState('');
   const [ editID, setEditID ] = useState(0);
 
-  const schema = [
-    { field:'id', label:'ID' },
-    { field:'user_role', label:'User Role' },
-    { field:'first_name', label:'First Name' },
-    { field:'last_name', label:'Last Name' },
-    { field:'email', label:'E-Mail' },
-    { field:'ip_address', label:'IP Address' },
-    { field:'date_created', label:'Created' },
-    { field:'last_logged_in', label:'Last Log-in' },
-  ]
-
   useEffect(() => {
     const fetchUsers = async () => {
-      // setLoading(true);
       const res = await axios.get('/userData.json');
       setUsers(res.data);
-      // setLoading(false);
     }
 
     fetchUsers();
@@ -64,7 +50,7 @@ const Admin = () => {
 
         <h2>Users</h2>
 
-        <input className="filter" onChange={ (e) => { setFilter(e.currentTarget.value) } } value={ filter } type="text" />
+        <input className="filter" onChange={ (e) => { setFilter(e.currentTarget.value) } } value={ filter } type="text"></input>
 
         <Pagination
           usersPerPage={ usersPerPage }
@@ -78,33 +64,24 @@ const Admin = () => {
           <thead>
             <tr>
               {
-                schema.map((heading) => {
-                  return (
-                    <th key={ `heading-${heading.field}` }>{ heading.label }</th>
-                  )
-                })
+                schema.map((heading) => (
+                  <th key={ `heading-${heading.field}` }>{ heading.label }</th>
+                ))
               }
               <th>Edit</th>
             </tr>
           </thead>
           <tbody>
             {
-              currentUsers.map((user, i) => {
-                return (
-                  <tr key={ `row-${user.id}` }>
-                    {
-                      schema.map((field) => {
-                        return (
-                          <td key={ `cell-${field.field}` }>{ user[field.field] }</td>
-                        )
-                      })
-                    }
-                    <td>
-                      <button onClick={ () => { editUserData(user.id) } }><MdOutlineEdit /></button>
-                    </td>
-                  </tr>
-                )
-              })
+              currentUsers.map((user, i) => (
+                <UserRow
+                  user={ user }
+                  key={ i }
+                  index={ i }
+                  editUserDara={ editUserData }
+                  schema={ schema }
+                />
+              ))
             }
           </tbody>
         </table>

@@ -1,0 +1,10 @@
+[
+  { "field":"id", "label":"ID" },
+  { "field":"user_role", "label":"User Role" },
+  { "field":"first_name", "label":"First Name" },
+  { "field":"last_name", "label":"Last Name" },
+  { "field":"email", "label":"E-Mail" },
+  { "field":"ip_address", "label":"IP Address" },
+  { "field":"date_created", "label":"Created" },
+  { "field":"last_logged_in", "label":"Last Log-in" }
+]
