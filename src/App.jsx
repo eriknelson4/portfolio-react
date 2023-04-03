@@ -11,6 +11,7 @@ const Admin = lazy(() => import('./Pages/Admin/Admin'));
 const Users = lazy(() => import('./Pages/Admin/Users/Users'));
 const Settings = lazy(() => import('./Pages/Admin/Settings/Settings'));
 const Items = lazy(() => import('./Pages/Admin/Items/Items'));
+const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
 
 function App() {
   const { userRole } = useUI();
@@ -81,6 +82,9 @@ function App() {
           </ProtectedRoute>
         }
       />
+
+      <Route path='*' element={<NotFound />}/>
+
     </Routes>
   )
 }
