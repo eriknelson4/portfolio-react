@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import Pagination from '../Pagination/Pagination';
 import { useUI } from '../../Context/UIContext';
 import { Modal } from '../Modals/Modal';
+import Pagination from '../Pagination/Pagination';
 import UserRow from './UserRow';
 import EditUserModal from '../EditUserModal/EditUserModal';
 import axios from 'axios';
 import schema from '../..//Data/UserTableSchema.json';
+import './UserList.scss';
 
 const Admin = () => {
   const { handleModal } = useUI();
