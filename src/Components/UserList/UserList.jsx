@@ -51,7 +51,12 @@ const Admin = () => {
 
         <h2>Users</h2>
 
-        <input className="filter" onChange={ (e) => { setFilter(e.currentTarget.value) } } value={ filter } type="text"></input>
+        <input
+          className="filter"
+          onChange={ (e) => { setFilter(e.currentTarget.value) } }
+          value={ filter }
+          type="text">
+        </input>
 
         <Pagination
           usersPerPage={ usersPerPage }
@@ -79,7 +84,7 @@ const Admin = () => {
                   user={ user }
                   key={ i }
                   index={ i }
-                  editUserDara={ editUserData }
+                  editUserData={ editUserData }
                   schema={ schema }
                 />
               ))

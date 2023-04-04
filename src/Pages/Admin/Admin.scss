@@ -1,1 +1,5 @@
 @import '../../Styles/variables';
+
+.admin-content {
+  .columns { column-count:2; column-gap:4rem; }
+}
