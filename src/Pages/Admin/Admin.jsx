@@ -13,7 +13,7 @@ const Admin = () => {
 
           <h3>What is this section?</h3>
 
-          <p>There is no back end for this website. There is no login or users. This area is where I experiment using React to build different components.</p>
+          <p>There is no back-end for this website. There are no logins or users. This area is where I experiment using React to build different components.</p>
 
           <p>All the data is hosted locally. Nothing is saved (except maybe to local storage). This is just a place to look around,</p>
 

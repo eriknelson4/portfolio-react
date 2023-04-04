@@ -7,4 +7,7 @@
       svg { fill:$highlight; }
     }
   }
+  @media screen and (max-width:959px) {
+    a { display:inline-block; }
+  }
 }

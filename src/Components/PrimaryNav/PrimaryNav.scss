@@ -22,9 +22,14 @@
     &[aria-hidden="true"] { transform:translatex(-100%); }
     &[aria-hidden="false"] { transform:translatex(0); }
     li { border-bottom:$lt-gray 1px solid; text-transform:uppercase;
+      &:last-child { border-bottom:none; }
       a { text-decoration:none; display:block; font-size:2rem; color:#fff; padding:1rem 1rem 1rem 2rem; box-sizing:border-box; border-left:4px transparent solid;
         &.active { border-color:$highlight; }
       }
     }
+    .mobile-menu-close { display:block; height:3rem; border-bottom:1px $lt-gray solid; width:100%;
+      svg { display:block; fill:$highlight; width:3rem; height:auto; z-index:10; margin-left:auto; padding-right:0.25rem; }
+    }
+    .pill { display:block; margin:2rem 2rem 0 auto; }
   }
 }

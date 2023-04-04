@@ -12,7 +12,7 @@ export const UserModal = () => {
     <>
       <h3>Switch User Role</h3>
 
-      <p>This website simulates multiple user roles and API calls. There no actual backend service. This website is a demonstration of what I am able to do with React.</p>
+      <p>This website simulates multiple user roles. There is no actual backend service. The part of the website is a demonstration of some standard working components in React.</p>
 
       <p>The code for this site is availble in a public GitHub respository here.</p>
 
