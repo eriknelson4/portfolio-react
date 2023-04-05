@@ -1,0 +1,9 @@
+@import '../Styles/variables';
+
+main.admin { display:grid; grid-template-columns:100px auto; padding-block:0;
+  .main-content { padding:2rem 6rem; }
+
+  @media screen and (max-width:959px) { display:block;
+    .main-content { padding:2rem; }
+  }
+}

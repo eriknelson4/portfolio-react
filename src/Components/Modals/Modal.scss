@@ -1,4 +1,4 @@
-
+@import '../../Styles/variables';
 
 .modal { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); box-shadow:0 0 20px 10px rgba(0,0,0,0.15); z-index:1000; background-color:#fff; border:2px #ccc solid; border-radius:10px; display:none; width:640px; max-width:calc(100% - 20px);
   &[aria-hidden="false"] { display:block; }
@@ -7,13 +7,13 @@
 .modal-close { position:absolute; top:0; right:0; padding:0; height:30px; width:30px; transform:translate(40%, -40%); order:none; padding:0; margin:0; background-color:#fff; border-radius:50%;
   svg { fill:#888; transition:fill 0.25s ease-in-out; width:100%; height:auto; }
   &:hover {
-    svg { fill:#333; }
+    svg { fill:$highlight; }
   }
 }
 .modal-content { padding:20px;
   h2, h3 { text-align:center; margin:0 0 0.5em 0; }
   p { margin-bottom:0.5em; }
   .button-collection { margin:4rem 0 0 0; text-align:center;
-    button { margin-inline:0.25em;}
+    button { margin-inline:0.25em; margin-bottom:0.5em; }
   }
 }

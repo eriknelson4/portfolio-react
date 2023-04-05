@@ -1,12 +1,35 @@
 @import '../../Styles/variables';
 
-.primary-nav { background-color:#000; color:#fff; padding:1rem; text-align:right;
-  li { display:inline-flex; font-size:1.8rem; font-weight:600; margin-inline:1em; text-transform:uppercase; vertical-align:middle;
-    a { text-decoration:none; position:relative;
-      &:after { content:''; width:0; position:absolute; left:0; bottom:0; border-bottom:2px solid $highlight; transition:width 0.25s ease-in-out; }
-      &:hover, &:focus {
-        &:after { width:100%; }
+.mobile-menu-open { display:none; width:4em; height:4em; position:absolute; z-index:100; top:2.4em; left:1.8em; font-size:10px;
+  svg { width:100%; fill:#fff; height:auto; }
+  @media screen and (max-width:767px) and (min-width:640px) { display:block; position:absolute; top:2.7em; left:50%; transform:translatex(-310px); }
+  @media screen and (max-width:639px) { display:block; position:absolute; font-size:2.1vw; top:1.3em; left:50%; transform:translatex(-45.5vw); }
+}
+
+.primary-nav {
+  @media screen and (min-width:768px) { background-color:#000; color:#fff; padding:1rem; text-align:right;
+    .mobile-menu-close { display:none; fill:#fff; }
+    li { display:inline-flex; font-size:1.8rem; font-weight:600; margin-inline:1em; text-transform:uppercase; vertical-align:middle;
+      a { text-decoration:none; position:relative;
+        &:after { content:''; width:0; position:absolute; left:0; bottom:0; border-bottom:2px solid $highlight; transition:width 0.25s ease-in-out; }
+        &:hover, &:focus, &.active {
+          &:after { width:100%; }
+        }
       }
     }
+  }
+  @media screen and (max-width:767px) { position:absolute; width:280px; left:0; top:0; height:100vh;background-color:#000; z-index:1000; transform:translatex(-100%); transition:transform 0.25s ease-in-out;
+    &[aria-hidden="true"] { transform:translatex(-100%); }
+    &[aria-hidden="false"] { transform:translatex(0); }
+    li { border-bottom:$lt-gray 1px solid; text-transform:uppercase;
+      &:last-child { border-bottom:none; }
+      a { text-decoration:none; display:block; font-size:2rem; color:#fff; padding:1rem 1rem 1rem 2rem; box-sizing:border-box; border-left:4px transparent solid;
+        &.active { border-color:$highlight; }
+      }
+    }
+    .mobile-menu-close { display:block; height:3rem; border-bottom:1px $lt-gray solid; width:100%;
+      svg { display:block; fill:$highlight; width:3rem; height:auto; z-index:10; margin-left:auto; padding-right:0.25rem; }
+    }
+    .pill { display:block; margin:2rem 2rem 0 auto; }
   }
 }

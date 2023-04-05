@@ -8,39 +8,7 @@ export const UIProvider = ({ children }) => {
   const [screenInitial, setScreenInitial] = useState(true);
   const [currentModal, setCurrentModal] = useState(null);
   const [colorMode, setColorMode] = useState('dark');
-  const [userRole, setUserRole] = useState('admin');
-  const [primaryNavOptions, setPrimaryNavOptions] = useState([
-    {
-      title: 'Home',
-      url:'/',
-      roles: ['guest', 'user', 'admin']
-    },
-    {
-      title:'Skills',
-      url:'/skills',
-      roles: ['guest', 'user', 'admin']
-    },
-    {
-      title:'Portfolio',
-      url:'/portfolio',
-      roles: ['guest', 'user', 'admin']
-    },
-    {
-      title:'Contact',
-      url:'/contact',
-      roles: ['guest', 'user', 'admin']
-    },
-    {
-      title:'Admin',
-      url:'/admin',
-      roles: ['admin']
-    }
-  ]);
-
-  useEffect(() => {
-
-  }, [userRole]);
-
+  const [userRole, setUserRole] = useState('guest');
 
   const handleModal = (modalID, newState = false) => {
     setScreenInitial(false);
@@ -81,7 +49,6 @@ export const UIProvider = ({ children }) => {
       currentModal,
       colorMode,
       setColorMode,
-      primaryNavOptions,
       userRole,
       setUserRole
     }}>

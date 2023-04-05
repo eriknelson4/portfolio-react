@@ -1,0 +1,13 @@
+@import '../../Styles/variables';
+
+.admin-side-menu { height:100%; width:100%; background-color:#000;
+  a { height:4rem; width:4rem; margin:0 auto; display:block; margin:2rem; border:3px solid transparent; border-radius:50%; box-sizing:border-box;
+    svg { fill:#fff; display:block; width:100%; height:auto; transition:fill 0.25s ease-in-out; }
+    &:hover, &:focus, &.active {
+      svg { fill:$highlight; }
+    }
+  }
+  @media screen and (max-width:959px) {
+    a { display:inline-block; }
+  }
+}

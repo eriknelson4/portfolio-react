@@ -1,0 +1,7 @@
+@import '../../Styles/variables';
+
+.admin-content { margin-bottom:8rem;
+  @media screen and (min-width:640px) {
+    .columns { column-count:2; column-gap:4rem; }
+  }
+}
