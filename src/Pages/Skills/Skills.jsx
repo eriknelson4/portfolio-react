@@ -21,6 +21,11 @@ const Skills = () => {
           </div>
 
           <div className="skill">
+            <h3>React</h3>
+            <p>I've come to really love the flexibility and speed that come from working in React. For small- to medium-sized projects there's really no better way to get a site built and deployed quickly. </p>
+          </div>
+
+          <div className="skill">
             <h3>Git/GitHub</h3>
             <p>I'm experienced with code version control, branch management, and collaborative workflows in Git and
               GitHub. I created and manage a large repository for HTML content on multiple websites using both shared,

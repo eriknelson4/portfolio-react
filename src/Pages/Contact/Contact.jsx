@@ -47,7 +47,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('submit')
     try {
       const res = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',

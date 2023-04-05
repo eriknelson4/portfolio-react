@@ -4,7 +4,6 @@ export const UserModal = () => {
   const { handleModal, setUserRole } = useUI();
 
   const passRole = (role) => {
-    console.log('UserModal: ', role);
     setUserRole(role);
   }
 
