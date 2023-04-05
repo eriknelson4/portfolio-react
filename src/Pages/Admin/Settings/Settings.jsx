@@ -7,6 +7,8 @@ const Settings = () => {
 
       <h2>Settings</h2>
 
+      <p>Nothing here yet.</p>
+
     </AdminTemplate>
   );
 }

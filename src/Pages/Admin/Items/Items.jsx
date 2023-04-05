@@ -7,6 +7,8 @@ const Items = () => {
 
       <h2>Items</h2>
 
+      <p>Nothing here yet.</p>
+
     </AdminTemplate>
   );
 }

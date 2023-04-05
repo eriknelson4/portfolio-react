@@ -24,11 +24,11 @@ const Admin = () => {
     }
 
     fetchUsers();
-  }, [currentPage, usersPerPage, filter]);
+  }, []);
 
   let filteredUsers = users.filter((item) => {
     for (const key in item) {
-      if (item[key].toString().includes(filter)) { return item; }
+      if (item[key].toString().toLowerCase().includes(filter)) { return item; }
     }
   });
 
@@ -53,7 +53,7 @@ const Admin = () => {
 
         <input
           className="filter"
-          onChange={ (e) => { setFilter(e.currentTarget.value) } }
+          onChange={ (e) => { setFilter(e.target.value.toLowerCase()) } }
           value={ filter }
           type="text">
         </input>
