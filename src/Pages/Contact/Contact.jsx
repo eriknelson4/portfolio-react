@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Standard from '../../Templates/Standard';
 import './Contact.scss';
-import keys from '../../../keys';
 
 const Contact = () => {
 
@@ -12,7 +11,7 @@ const Contact = () => {
     honeypot: '',
     message: '',
     replyTo: '@',
-    accessKey: keys.formAPIKey
+    accessKey: import.meta.env.FORM_KEY
   });
 
   const [response, setResponse] = useState({
@@ -104,7 +103,7 @@ const Contact = () => {
             </div>
 
             <form onSubmit={ handleSubmit } className="form-item" aria-hidden="false" id="staticform">
-              <input type="hidden" name="accessKey" value={ keys.formAPIKey }></input>
+              <input type="hidden" name="accessKey" value={ import.meta.env.FORM_KEY }></input>
               <div className="field name">
                 <div className="control">
                   <input onChange={ handleChange } className="input" type="text" name="name" placeholder="Enter Your Name" required></input>
