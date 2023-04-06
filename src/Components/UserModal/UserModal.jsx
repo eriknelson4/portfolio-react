@@ -13,7 +13,7 @@ export const UserModal = () => {
 
       <p>This website simulates multiple user roles. There is no actual backend service. The part of the website is a demonstration of some standard working components in React.</p>
 
-      <p>The code for this site is availble in a public GitHub respository here.</p>
+      <p>The code for this site is availble in a <a rel="nofollow noopener" href="https://github.com/eriknelson4/portfolio-react" target="_blank">public GitHub respository</a>.</p>
 
       <div className="button-collection">
         <button onClick={ () => { passRole('guest'); handleModal('user-modal') } } className="block solid">Guest</button>

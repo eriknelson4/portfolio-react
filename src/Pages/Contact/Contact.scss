@@ -11,7 +11,7 @@
     @media screen and (max-width:1279px) { width:530px; }
     @media screen and (max-width:639px) { width:calc(100% - 2rem); }
     .icon-wrap { text-align:center; }
-    .icon { width:7rem; display:inline-block; vertical-align:middle; margin:0 1em;
+    .icon { width:5rem; display:inline-block; vertical-align:middle; margin:0 1em;
       svg { width:100%; height:auto; fill:#fff; transition:fill 0.25s ease-in-out; }
       a { outline:none;
         &:hover, &:focus {
@@ -31,7 +31,7 @@
         &.email { grid-area:email; }
         &.message { grid-area:message; }
         label { font-size:inherit; margin-bottom:0.2em; display:block; }
-        textarea, input { width:100%; font-size:inherit; padding:0.5rem; color:#000; outline:none; background-color:#fff;
+        textarea, input { width:100%; font-size:inherit; padding:0.5rem; font-size:1.6rem; color:#000; outline:none; background-color:#fff;
           &:hover, *:focus { outline:$highlight 2px solid; }
         }
       }

@@ -7,12 +7,12 @@ export const EditUserModal = ({ userID }) => {
     <>
       <h3>Edit User Data: { userID }</h3>
 
-      <p>The user data is stored only in memory. Refreshing the page will clear all changes.</p>
+      <p>Coming soon.</p>
 
-      <div className="button-collection">
+      {/* <div className="button-collection">
         <button onClick={ () => { updateUser('update') } } className="block solid">Update</button>
         <button onClick={ () => { deleteUser('delete'); handleModal('user-modal') } } className="block solid">Delete</button>
-      </div>
+      </div> */}
     </>
   )
 }

@@ -1,39 +1,18 @@
 import { useState } from 'react';
 import Standard from '../../Templates/Standard';
 import './Contact.scss';
-
-const submitForm = ((e) => {
-  e.preventDefault();
-
-
-
-  // $.ajax({
-  //   url: 'https://api.staticforms.xyz/submit',
-  //   type: "POST",
-  //   dataType: 'json',
-  //   data: $("#staticform").serialize(),
-  //   success: function (result) {
-  //     formSuccess();
-  //   },
-  //   error: function (xhr, resp, text) {
-  //     console.error(xhr, resp, text);
-  //     formFailure();
-  //   }
-  // })
-});
-
-
+import keys from '../../../keys';
 
 const Contact = () => {
 
   const [contact, setContact] = useState({
     name: '',
     email: '',
-    subject: 'StaticForms - Contact Form',
-    honeypot: '', // if any value received in this field, form submission will be ignored.
+    subject: 'eriknelson.dev - Contact Form',
+    honeypot: '',
     message: '',
-    replyTo: '@', // this will set replyTo of email to email address entered in the form
-    accessKey: '085919e2-8233-4ba3-b8f5-76e6865bb1ff'
+    replyTo: '@',
+    accessKey: keys.formAPIKey
   });
 
   const [response, setResponse] = useState({
@@ -59,7 +38,7 @@ const Contact = () => {
       if (json.success) {
         setResponse({
           type: 'success',
-          message: 'Thank you for reaching out to us.'
+          message: 'Thank you for reaching out to me.'
         });
       } else {
         setResponse({
@@ -84,7 +63,7 @@ const Contact = () => {
         <div className="contact-information">
           <div className="icon-wrap">
             <div className="icon linkedin">
-              <a href="https://www.linkedin.com/in/eriknelson4/" title="LinkedIn" target="_blank">
+              <a rel="noopener noreferrer" href="https://www.linkedin.com/in/eriknelson4/" title="LinkedIn" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path
                     d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z" />
@@ -92,7 +71,7 @@ const Contact = () => {
               </a>
             </div>
             <div className="icon email">
-              <a href="mailto:erik.nelson4@gmail.com" title="eMail">
+              <a rel="noopener noreferrer" href="mailto:erik.nelson4@gmail.com" title="eMail">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 88.86">
                   <title>eMail</title>
                   <path
@@ -101,7 +80,7 @@ const Contact = () => {
               </a>
             </div>
             <div className="icon github">
-              <a href="https://github.com/eriknelson4" title="GitHub" target="_blank">
+              <a rel="noopener noreferrer" href="https://github.com/eriknelson4" title="GitHub" target="_blank">
                 <svg width="800px" height="800px" viewBox="0 -3.5 256 256" xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="xMinYMin meet">
                   <g>
@@ -124,8 +103,8 @@ const Contact = () => {
               <p>Thank you for your submission. You will hear back from me shortly.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="form-item" aria-hidden="false" id="staticform">
-              <input type="hidden" name="accessKey" value="085919e2-8233-4ba3-b8f5-76e6865bb1ff"></input>
+            <form onSubmit={ handleSubmit } className="form-item" aria-hidden="false" id="staticform">
+              <input type="hidden" name="accessKey" value={ keys.formAPIKey }></input>
               <div className="field name">
                 <div className="control">
                   <input onChange={ handleChange } className="input" type="text" name="name" placeholder="Enter Your Name" required></input>
