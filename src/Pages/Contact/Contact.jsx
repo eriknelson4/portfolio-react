@@ -11,7 +11,7 @@ const Contact = () => {
     honeypot: '',
     message: '',
     replyTo: '@',
-    accessKey: import.meta.env.FORM_KEY
+    accessKey: "085919e2-8233-4ba3-b8f5-76e6865bb1ff"
   });
 
   const [response, setResponse] = useState({
@@ -103,7 +103,7 @@ const Contact = () => {
             </div>
 
             <form onSubmit={ handleSubmit } className="form-item" aria-hidden="false" id="staticform">
-              <input type="hidden" name="accessKey" value={ import.meta.env.FORM_KEY }></input>
+              <input type="hidden" name="accessKey" value="085919e2-8233-4ba3-b8f5-76e6865bb1ff"></input>
               <div className="field name">
                 <div className="control">
                   <input onChange={ handleChange } className="input" type="text" name="name" placeholder="Enter Your Name" required></input>
