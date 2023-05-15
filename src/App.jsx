@@ -11,7 +11,9 @@ const Admin = lazy(() => import('./Pages/Admin/Admin'));
 const Users = lazy(() => import('./Pages/Admin/Users/Users'));
 const Settings = lazy(() => import('./Pages/Admin/Settings/Settings'));
 const Items = lazy(() => import('./Pages/Admin/Items/Items'));
-const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
+const Guitar = lazy(() => import('./Pages/Guitar/Guitar'));
+const NotFound = lazy(() => import('./Pages/NotFound/NotFound'));
+
 
 function App() {
   const { userRole } = useUI();
@@ -40,6 +42,14 @@ function App() {
         element={
           <Suspense fallback={<p>...</p>}>
             <Skills />
+          </Suspense>
+        }
+      />
+
+      <Route path="/guitar"
+        element={
+          <Suspense fallback={<p>...</p>}>
+            <Guitar />
           </Suspense>
         }
       />

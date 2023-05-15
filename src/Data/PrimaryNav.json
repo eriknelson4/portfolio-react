@@ -20,6 +20,11 @@
     "roles": ["guest", "user", "admin"]
   },
   {
+    "title":"Guitar",
+    "url":"/guitar",
+    "roles": ["guest", "user", "admin"]
+  },
+  {
     "title":"Admin",
     "url":"/admin",
     "roles": ["admin"]

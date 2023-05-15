@@ -1,0 +1,41 @@
+@import '../../Styles/variables';
+
+.guitar { font-size:clamp(5p, 0.52vw, 10px); margin-bottom:8em; padding-inline:20px;
+  h1, h2 { text-align:center; }
+  h2 { margin-bottom:1em; }
+  .neck { border-left:4px #fff solid; background-color:#000000; }
+  .fret-markers { display:grid; grid-template-columns:4em 3em repeat(24, minmax(0, 1fr));
+    span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8rem; color:#000; }
+  }
+  .string { display:grid; grid-template-columns:4em 3em repeat(24, minmax(0, 1fr)); position:relative;
+    .string-root { background-color:#000; color:#fff; text-align:center;  display:grid; align-content:center; font-size:1.4em; font-weight:bold; }
+    &:first-child { border-top:4px #fff solid; }
+    &:last-child { border-bottom:4px #fff solid; }
+    &:after { content:''; top:calc(50% - 1px); left:4em; width:calc(100% - 4em); position:absolute; border-top:2px #333 solid; }
+    .fret { height:3em; border-right:0.2em solid #fff; position:relative;
+      &.nut { background-color:#333; border:none; }
+      span { display:none; }
+      &:hover {
+        &.dot:before { background-color:rgb(255, 153, 0); }
+        span { display:block; padding:0.25em; font-weight:bold; text-align:center; border-radius:1em; position:absolute; border:0.3em #888 solid; box-shadow:0 0 0.5em 0.25em rgba(0,0,0,0.15); top:-100%; left:010%; min-width:2em; width:80%; background-color:#fff; color:#000; font-size:1.6em; z-index:3; }
+      }
+      &.dot {
+        &:before { content:''; z-index:3; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:1.5em; height:1.5em; border-radius:50%; background-color:#fff; }
+      }
+      &.root {
+        &:before { background-color:#f57804; }
+      }
+    }
+  }
+}
+
+.controls { display:grid; grid-template-columns:4em 20em 20em 20em; margin:2rem; background-color:#fff; padding:2rem; font-size:2rem;
+  label { display:block; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
+  option { text-indent:0.5rem; line-height:4em; }
+  .guitar-tuner {
+    .peg { display:inline-block; vertical-align:top; width:1.5em; text-align:center; margin-right:0.25em;
+      span { display:block; line-height:1.5em; }
+      button { width:1.5em; height:1.5em; border:1px #000 solid; border-radius:50%; }
+    }
+  }
+}
