@@ -13,6 +13,7 @@ const Guitar = () => {
   const [ scale, setScale ] = useState('maj');
   const [ root, setRoot ] = useState(0);
   const [ userScale, setUserScale ] = useState(['C','D','E','F','G','A','B']);
+  const [ fretboardStyle, setFretboardStyle] = useState('linear');
 
   const shiftTuning = (string, offset) => {
     let newTuning = [...tuning];
@@ -36,7 +37,7 @@ const Guitar = () => {
 
   return (
     <Standard>
-      <div className="guitar">
+      <div className={ `guitar ${fretboardStyle}` }>
         <h1>Guitar</h1>
 
         <h2>{ notes[root] } { scales[scale].name }</h2>
@@ -70,7 +71,8 @@ const Guitar = () => {
       </div>
 
       <Controls
-      tuning = { tuning }
+        tuning = { tuning }
+        setFretboardStyle = { setFretboardStyle }
         shiftTuning = { shiftTuning }
         setTuning = { setTuning }
         setScale = { setScale }

@@ -1,10 +1,10 @@
 import tunings from '../../Data/Tunings';
 import { scales, notes } from '../../Data/scales';
 
-const Controls = ({ tuning, shiftTuning, setRoot, setTuning, setScale }) => {
+const Controls = ({ tuning, setFretboardStyle, shiftTuning, setRoot, setTuning, setScale }) => {
   return (
     <div className="controls">
-      <div className="control">
+      <div className="control root">
         <label htmlFor="scale-root">Root</label>
         <select id="scale-root" onChange={ (e) => { setRoot(parseInt(e.target.value)); } } className="root-selector">
           {
@@ -17,7 +17,7 @@ const Controls = ({ tuning, shiftTuning, setRoot, setTuning, setScale }) => {
         </select>
       </div>
 
-      <div className="control">
+      <div className="control scale">
         <label htmlFor="scale-type">Scale</label>
         <select id="scale-type" onChange={ (e) => { setScale(e.target.value) } } className="scale-selector">
           {
@@ -30,7 +30,7 @@ const Controls = ({ tuning, shiftTuning, setRoot, setTuning, setScale }) => {
         </select>
       </div>
 
-      <div className="control">
+      <div className="control tuning">
         <label htmlFor="tuning-type">Tuning</label>
         <select id="tuning-type" onChange={ (e) => { setTuning(tunings[e.target.value].formula) } } className="tuning-selector">
           {
@@ -43,7 +43,15 @@ const Controls = ({ tuning, shiftTuning, setRoot, setTuning, setScale }) => {
         </select>
       </div>
 
-      <div className="control">
+      <div className="control fretboard-style">
+        <label htmlFor="fretboard">Fretboard Style</label>
+        <select id="fretboard" onChange={ (e) => { setFretboardStyle(e.target.value) } } >
+          <option value="linear">Linear</option>
+          <option value="log">Logarithmic</option>
+        </select>
+      </div>
+
+      <div className="control custom-tuning">
         <label htmlFor="tuning-type">Custom Tuning</label>
         <div className="guitar-tuner">
           {

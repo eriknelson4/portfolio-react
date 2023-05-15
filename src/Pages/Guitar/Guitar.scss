@@ -1,13 +1,22 @@
 @import '../../Styles/variables';
+@mixin logFrets { grid-template-columns:4em 3em 5.556fr 5.245fr 4.950fr 4.672fr 4.410fr 4.163fr 3.929fr 3.708fr 3.500fr 3.304fr 3.118fr 2.943fr 2.778fr 2.622fr 2.475fr 2.336fr 2.205fr 2.081fr 1.964fr 1.854fr 1.750fr 1.652fr 1.559fr 1.472fr; }
+@mixin linearFrets { grid-template-columns:4em 3em repeat(24, minmax(0, 1fr)); }
 
 .guitar { font-size:clamp(5p, 0.52vw, 10px); margin-bottom:8em; padding-inline:20px;
+  &.log {
+    .string, .fret-markers { @include logFrets(); }
+  }
+  &.linear {
+    .string, .fret-markers { @include linearFrets(); }
+  }
+
   h1, h2 { text-align:center; }
-  h2 { margin-bottom:1em; }
-  .neck { border-left:4px #fff solid; background-color:#000000; }
-  .fret-markers { display:grid; grid-template-columns:4em 3em repeat(24, minmax(0, 1fr));
+  h2 { margin-bottom:1em; text-transform:none; }
+  .neck { border-right:3px #fff solid; background-color:#000000; }
+  .fret-markers { display:grid;
     span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8rem; color:#000; }
   }
-  .string { display:grid; grid-template-columns:4em 3em repeat(24, minmax(0, 1fr)); position:relative;
+  .string { display:grid; position:relative;
     .string-root { background-color:#000; color:#fff; text-align:center;  display:grid; align-content:center; font-size:1.4em; font-weight:bold; }
     &:first-child { border-top:4px #fff solid; }
     &:last-child { border-bottom:4px #fff solid; }
@@ -29,8 +38,15 @@
   }
 }
 
-.controls { display:grid; grid-template-columns:4em 20em 20em 20em; margin:2rem; background-color:#fff; padding:2rem; font-size:2rem;
-  label { display:block; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
+.controls { width:20em; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); margin:2rem; background-color:#fff; padding:2rem; font-size:2rem; grid-template-areas:'root scale' 'tuning tuning' 'custom-tuning custom-tuning'; gap:2em;
+  select { padding:0.5rem; width:100%;  }
+  .control {
+    &.root { grid-area:root; }
+    &.scale { grid-area:scale; }
+    &.tuning { grid-area:tuning; }
+    &.custom-tuning { grid-area:custom-tuning; }
+  }
+  label { display:block; padding-left:0.5rem; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
   option { text-indent:0.5rem; line-height:4em; }
   .guitar-tuner {
     .peg { display:inline-block; vertical-align:top; width:1.5em; text-align:center; margin-right:0.25em;
