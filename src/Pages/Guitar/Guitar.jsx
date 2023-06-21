@@ -14,6 +14,7 @@ const Guitar = () => {
   const [ root, setRoot ] = useState(0);
   const [ userScale, setUserScale ] = useState(['C','D','E','F','G','A','B']);
   const [ fretboardStyle, setFretboardStyle] = useState('linear');
+  let markerType = 'numbers';
 
   const shiftTuning = (string, offset) => {
     let newTuning = [...tuning];
@@ -45,7 +46,9 @@ const Guitar = () => {
         <div className="fret-markers">
           {[...Array(26)].map((x, i) =>
             <div className="marker">
-              <span>{ (i - 1) > 0 ? (i - 1) : null }</span>
+              {
+                <span>{ (i - 1) > 0 ? (i - 1) : null }</span>
+              }
             </div>
           )}
         </div>
