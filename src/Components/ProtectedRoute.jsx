@@ -1,6 +1,8 @@
 import { Navigate } from 'react-router-dom';
+import { useUI } from '../Context/UIContext';
 
-const ProtectedRoute = ({ userRole, children }) => {
+const ProtectedRoute = ({ children }) => {
+  const { userRole } = useUI();
   if (userRole != 'admin') {
     return <Navigate to="/" replace />;
   }
