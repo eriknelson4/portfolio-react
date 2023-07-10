@@ -10,13 +10,18 @@ import { IoMdClose } from 'react-icons/io';
 import './PrimaryNav.scss';
 
 const PrimaryNav = () => {
+  const [ isModalOpen, setIsModalOpen ] = useState(null);
   const [ menuOpen, setMenuOpen ] = useState(false);
-  const { userRole, handleModal } = useUI();
+  const { userRole } = useUI();
 
   useEffect(() => {
     document.querySelector('.primary-nav').setAttribute('aria-hidden', !menuOpen);
   }, [menuOpen]);
 
+  useEffect((val) => {
+    console.log('user pill clicked: ' + val);
+    setIsModalOpen(val);
+  }, [isModalOpen])
 
   return (
     <>
@@ -39,10 +44,10 @@ const PrimaryNav = () => {
               }
             })
           }
-          <UserGlyph handleModal={ handleModal }/>
+          <UserGlyph setModalOpen={ setIsModalOpen } />
         </ul>
       </nav>
-      <Modal id="user-modal">
+      <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="user-modal">
         <UserModal />
       </Modal>
     </>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Modal } from '../../Components/Modals/Modal';
 import { useUI } from '../../Context/UIContext';
 import Standard from '../../Templates/Standard';
@@ -9,12 +9,18 @@ import portfolioItems from './portfolioItems.json';
 import './Portfolio.scss';
 
 const Portfolio = () => {
-  const { handleModal } = useUI();
+  // const { handleModal } = useUI();
   const [ currentModal, setCurrentModal ] = useState('');
+  const [ isModalOpen, setIsModalOpen ] = useState(null);
+
+  useEffect((val) => {
+    setIsModalOpen(val);
+  }, [isModalOpen])
 
   const openPortfolioModal = (id) => {
     setCurrentModal({ ...portfolioItems[id] });
-    handleModal('portfolio-modal', true);
+    setIsModalOpen(true);
+    // handleModal('portfolio-modal', true);
   }
 
   return (
@@ -48,7 +54,7 @@ const Portfolio = () => {
 
       </Standard>
 
-      <Modal id="portfolio-modal">
+      <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="portfolio-modal">
         <PortfolioModal currentModal={ currentModal }/>
       </Modal>
 
