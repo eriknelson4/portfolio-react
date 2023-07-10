@@ -20,7 +20,6 @@ const Portfolio = () => {
   const openPortfolioModal = (id) => {
     setCurrentModal({ ...portfolioItems[id] });
     setIsModalOpen(true);
-    // handleModal('portfolio-modal', true);
   }
 
   return (

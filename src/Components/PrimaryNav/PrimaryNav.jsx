@@ -19,7 +19,6 @@ const PrimaryNav = () => {
   }, [menuOpen]);
 
   useEffect((val) => {
-    console.log('user pill clicked: ' + val);
     setIsModalOpen(val);
   }, [isModalOpen])
 

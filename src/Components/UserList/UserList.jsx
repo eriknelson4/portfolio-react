@@ -45,8 +45,6 @@ const Admin = () => {
     handleModal('edit-user-modal', true);
   }
 
-  console.log('current page: ' + currentPage);
-
   return (
     <>
       <div className="user-list">

@@ -12,7 +12,7 @@ export const Modal = ({ id, children, isOpen, setModalOpen }) => {
 
   useEffect(() => {
     const el = modalElement.current;
-    if (isOpen) { console.log(el); el.showModal(); }
+    if (isOpen) { el.showModal(); }
     if (isOpen === false) { el.close(); }
   }, [isOpen]);
 

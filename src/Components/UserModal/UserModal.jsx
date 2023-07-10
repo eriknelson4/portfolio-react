@@ -3,10 +3,6 @@ import { useUI } from '../../Context/UIContext';
 export const UserModal = () => {
   const { setUserRole } = useUI();
 
-  const passRole = (role) => {
-    setUserRole(role);
-  }
-
   return (
     <>
       <h3>Switch User Role</h3>
