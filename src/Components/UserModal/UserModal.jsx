@@ -1,10 +1,11 @@
 import { useUI } from '../../Context/UIContext';
 
-export const UserModal = () => {
-  const { handleModal, setUserRole } = useUI();
+export const UserModal = ({ setModalOpen }) => {
+  const { setUserRole } = useUI();
 
-  const passRole = (role) => {
+  const setRole = (role) => {
     setUserRole(role);
+    setModalOpen(false);
   }
 
   return (
@@ -16,9 +17,9 @@ export const UserModal = () => {
       <p>The code for this site is availble in a <a rel="nofollow noopener" href="https://github.com/eriknelson4/portfolio-react" target="_blank">public GitHub respository</a>.</p>
 
       <div className="button-collection">
-        <button onClick={ () => { passRole('guest'); handleModal('user-modal') } } className="block solid">Guest</button>
-        <button onClick={ () => { passRole('user'); handleModal('user-modal') } } className="block solid">User</button>
-        <button onClick={ () => { passRole('admin'); handleModal('user-modal') } } className="block solid">Admin</button>
+        <button onClick={ () => { setRole('guest'); } } className="block solid">Guest</button>
+        <button onClick={ () => { setRole('user'); } } className="block solid">User</button>
+        <button onClick={ () => { setRole('admin'); } } className="block solid">Admin</button>
       </div>
     </>
   )

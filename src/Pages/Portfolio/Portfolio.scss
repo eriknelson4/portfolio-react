@@ -7,7 +7,7 @@
     @media screen and (max-width:1279px) { width:calc(100% - 40px); max-width:640px; }
   }
 
-  .main-items { display:grid; width:83.3%; margin:0 auto 8em auto;
+  .main-items, .website-wrap { display:grid; width:83.3%; margin:0 auto 8em auto;
     grid-template-columns:repeat(5, minmax(0, 1fr));
     @media screen and (max-width:1599px) { grid-template-columns:repeat(4, minmax(0, 1fr)); }
     @media screen and (max-width:1279px) { grid-template-columns:repeat(3, minmax(0, 1fr)); }
@@ -20,6 +20,11 @@
     @media screen and (max-width:479px) {
       width:100%;
     }
+
+    .site {
+      img { height:auto; }
+    }
+
     .item { position:relative; background-color:rgba(0,0,0,0.8); transform-origin:center center; transition:all 0.25s ease-in-out; border:none; padding:0; outline:none;
       &:hover, &:focus-within { opacity:1;
         div { opacity:1; }

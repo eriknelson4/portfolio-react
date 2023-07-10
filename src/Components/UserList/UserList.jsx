@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useUI } from '../../Context/UIContext';
 import { Modal } from '../Modals/Modal';
 import Pagination from '../Pagination/Pagination';
 import UserRow from './UserRow';
@@ -9,8 +8,6 @@ import schema from '../..//Data/UserTableSchema.json';
 import './UserList.scss';
 
 const Admin = () => {
-  const { handleModal } = useUI();
-
   const [ users, setUsers ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ usersPerPage, setUsersPerPage ] = useState(10);
@@ -22,9 +19,13 @@ const Admin = () => {
       const res = await axios.get('/userData.json');
       setUsers(res.data);
     }
-
     fetchUsers();
   }, []);
+
+  const updateFilter = (newFilter) => {
+    setFilter(newFilter);
+    setCurrentPage(1);
+  }
 
   let filteredUsers = users.filter((item) => {
     for (const key in item) {
@@ -42,7 +43,6 @@ const Admin = () => {
 
   const editUserData = (id) => {
     setEditID(id);
-    handleModal('edit-user-modal', true);
   }
 
   return (
@@ -53,7 +53,7 @@ const Admin = () => {
 
         <input
           className="filter"
-          onChange={ (e) => { setFilter(e.target.value.toLowerCase()) } }
+          onChange={ (e) => { updateFilter(e.target.value.toLowerCase()) } }
           value={ filter }
           type="text">
         </input>

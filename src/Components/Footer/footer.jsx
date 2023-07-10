@@ -3,7 +3,7 @@ import './footer.scss';
 const Footer = () => {
   return (
     <footer>
-      <p>&copy; 2023 Erik Nelson</p>
+      <p>&copy; { new Date().getYear() + 1900 } Erik Nelson</p>
     </footer>
    )
 }
