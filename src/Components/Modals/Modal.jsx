@@ -12,8 +12,14 @@ export const Modal = ({ id, children, isOpen, setModalOpen }) => {
 
   useEffect(() => {
     const el = modalElement.current;
-    if (isOpen) { el.showModal(); }
-    if (isOpen === false) { el.close(); }
+    if (isOpen) {
+      document.getElementById('root').classList.add('modal-open');
+      el.showModal();
+    }
+    if (isOpen === false) {
+      document.getElementById('root').classList.remove('modal-open');
+      el.close();
+    }
   }, [isOpen]);
 
   return ReactDOM.createPortal(

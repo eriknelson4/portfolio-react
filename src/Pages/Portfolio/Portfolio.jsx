@@ -25,7 +25,7 @@ const Portfolio = () => {
     <>
       <Standard>
 
-        <section id="portfolio" role="tabpanel" aria-hidden="true">
+        <section id="portfolio" role="tabpanel">
 
           <h2>Portfolio</h2>
 

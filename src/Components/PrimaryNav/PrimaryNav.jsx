@@ -14,8 +14,19 @@ const PrimaryNav = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const { userRole } = useUI();
 
+  const updateAria = () => {
+    let hidden = false;
+    if (window.innerWidth < 768 && !menuOpen) { hidden = true; }
+    document.querySelector('.primary-nav').setAttribute('aria-hidden', hidden);
+  }
+
   useEffect(() => {
-    document.querySelector('.primary-nav').setAttribute('aria-hidden', !menuOpen);
+    window.addEventListener('resize', updateAria);
+    updateAria();
+  }, []);
+
+  useEffect(() => {
+    updateAria();
   }, [menuOpen]);
 
   useEffect((val) => {
