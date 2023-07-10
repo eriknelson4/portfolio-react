@@ -18,7 +18,7 @@ const UserRow = ({ user, editUserData, schema}) => {
           // Create Element
 
           return (
-            <td class={ `${field.field}` } key={ `cell-${field.field}` }>{ data }</td>
+            <td className={ `${field.field}` } key={ `cell-${field.field}` }>{ data }</td>
           )
         })
       }

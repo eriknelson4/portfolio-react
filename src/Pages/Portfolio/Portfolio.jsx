@@ -9,7 +9,6 @@ import portfolioItems from './portfolioItems.json';
 import './Portfolio.scss';
 
 const Portfolio = () => {
-  // const { handleModal } = useUI();
   const [ currentModal, setCurrentModal ] = useState('');
   const [ isModalOpen, setIsModalOpen ] = useState(null);
 

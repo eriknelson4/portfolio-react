@@ -8,6 +8,12 @@ const PortfolioModal = ({ currentModal }) => {
   const [ currentIndex, setCurrentIndex ] = useState(0);
 
   let maxImageIndex = 0;
+  if (currentModal) {
+    maxImageIndex = currentModal.images.length - 1;
+    if (currentIndex > maxImageIndex) {
+      setCurrentIndex(0);
+    }
+  }
 
   const updateIndex = (increment) => {
     let newIndex = currentIndex + increment;

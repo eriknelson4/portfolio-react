@@ -47,7 +47,7 @@ const PrimaryNav = () => {
         </ul>
       </nav>
       <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="user-modal">
-        <UserModal />
+        <UserModal setModalOpen={ setIsModalOpen } />
       </Modal>
     </>
   )
