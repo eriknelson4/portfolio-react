@@ -77,8 +77,6 @@ const Skills = () => {
 
         </div>
       </div>
-
-
     </Standard>
   );
 }

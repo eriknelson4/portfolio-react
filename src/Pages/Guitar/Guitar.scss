@@ -2,7 +2,9 @@
 @mixin logFrets { grid-template-columns:4em 3em 5.556fr 5.245fr 4.950fr 4.672fr 4.410fr 4.163fr 3.929fr 3.708fr 3.500fr 3.304fr 3.118fr 2.943fr 2.778fr 2.622fr 2.475fr 2.336fr 2.205fr 2.081fr 1.964fr 1.854fr 1.750fr 1.652fr 1.559fr 1.472fr; }
 @mixin linearFrets { grid-template-columns:4em 3em repeat(24, minmax(0, 1fr)); }
 
-.guitar { font-size:clamp(5p, 0.52vw, 10px); margin-bottom:8em; padding-inline:20px;
+main { overflow:hidden; }
+
+.guitar { font-size:clamp(6.6px, 0.52vw, 10px); margin-bottom:8em; padding-inline:2em; min-width:1280px; position:relative;
   &.log {
     .string, .fret-markers { @include logFrets(); }
   }
@@ -10,16 +12,16 @@
     .string, .fret-markers { @include linearFrets(); }
   }
 
-  h1, h2 { text-align:center; }
-  h2 { margin-bottom:1em; text-transform:none; }
-  .neck { border-right:3px #fff solid; background-color:#000000; }
+  h1, h2 { text-align:center; max-width:100vw; }
+  h2 { margin-bottom:1em; text-transform:none; max-width:100vw; }
+  .neck { border-right:0.3em #fff solid; background-color:#000000; }
   .fret-markers { display:grid;
-    span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8rem; color:#000; }
+    span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8em; color:#000; }
   }
   .string { display:grid; position:relative;
-    .string-root { background-color:#000; color:#fff; text-align:center;  display:grid; align-content:center; font-size:1.4em; font-weight:bold; }
-    &:first-child { border-top:4px #fff solid; }
-    &:last-child { border-bottom:4px #fff solid; }
+    .string-root { background-color:#000; color:#fff; text-align:center; display:grid; align-content:center; font-size:1.4em; font-weight:bold; }
+    &:first-child { border-top:0.4em #fff solid; }
+    &:last-child { border-bottom:0.4em #fff solid; }
     &:after { content:''; top:calc(50% - 1px); left:4em; width:calc(100% - 4em); position:absolute; border-top:2px #333 solid; }
     .fret { height:3em; border-right:0.2em solid #fff; position:relative;
       &.nut { background-color:#333; border:none; }
