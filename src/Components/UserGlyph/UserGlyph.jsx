@@ -1,12 +1,12 @@
 import { useUI } from '../../Context/UIContext';
 import './UserGlyph.scss';
 
-const UserGlyph = ({ handleModal }) => {
+const UserGlyph = ({ setModalOpen }) => {
   const { userRole } = useUI();
 
   return (
     <li>
-      <button onClick={() => { handleModal('user-modal', true) }} className={ userRole + " pill" }>{ userRole }</button>
+      <button onClick={() => { setModalOpen(true) }} className={ userRole + " pill" }>{ userRole }</button>
     </li>
   );
 }

@@ -5,8 +5,20 @@ const UserRow = ({ user, editUserData, schema}) => {
     <tr key={ `row-${user.id}` }>
       {
         schema.map((field) => {
+
+          // Transforms
+
+          let data = user[field.field];
+
+          if (field.field === 'date_created' || field.field === 'last_logged_in') {
+            if (typeof data === 'string') { data = Number(data); }
+            data = new Date(data).toLocaleTimeString('en-us', {day:'numeric', month:'short', year:'numeric', hour:'numeric', minute:'numeric'})
+          }
+
+          // Create Element
+
           return (
-            <td key={ `cell-${field.field}` }>{ user[field.field] }</td>
+            <td className={ `${field.field}` } key={ `cell-${field.field}` }>{ data }</td>
           )
         })
       }

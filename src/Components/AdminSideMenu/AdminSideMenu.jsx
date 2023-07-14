@@ -30,7 +30,8 @@ const AdminSideMenu = () => {
           <NavLink
             key={ `admin-side-nav-${ i }`}
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-            to={ item.url }>
+            to={ item.url }
+            end>
             {item.icon}
           </NavLink>
         )

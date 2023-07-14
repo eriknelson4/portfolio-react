@@ -11,3 +11,7 @@ body { max-width:1920px; margin:0 auto; min-height:100vh;
 }
 
 main { padding-block:4rem; background-color:rgba(255,255,255,0.5); }
+
+#root { transition:filter 0.25s ease-in-out; min-height:100vh;
+  &.modal-open { filter:blur(0.3rem); }
+}

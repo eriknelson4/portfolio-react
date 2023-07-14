@@ -1,17 +1,34 @@
-import { useUI } from '../../Context/UIContext';
+import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { IoMdCloseCircle } from 'react-icons/io';
 import './Modal.scss';
 
-export const Modal = ({ id, children }) => {
-  const { currentModal, handleModal, getInitial } = useUI();
-  const initial = getInitial(id);
+export const Modal = ({ id, children, isOpen, setModalOpen }) => {
 
-  return (
-    <aside className="modal modal-item" data-initial={ initial } id={ id } role="dialog" aria-hidden={ currentModal == id ? false : true }>
-      <button className="modal-close" onClick={(e) => { handleModal(id); } }><IoMdCloseCircle /></button>
+  const closeModal = () => {
+    setModalOpen(false);
+  }
+  const modalElement = useRef();
+
+  useEffect(() => {
+    const el = modalElement.current;
+    if (isOpen) {
+      document.getElementById('root').classList.add('modal-open');
+      el.showModal();
+    }
+    if (isOpen === false) {
+      document.getElementById('root').classList.remove('modal-open');
+      el.close();
+    }
+  }, [isOpen]);
+
+  return ReactDOM.createPortal(
+    <dialog className="modal modal-item" ref={ modalElement } id={ id } >
+      <button className="modal-close" onClick={() => { closeModal(); } }><IoMdCloseCircle /></button>
       <div className="modal-content">
         { children }
       </div>
-    </aside>
+    </dialog>,
+    document.getElementById('modal')
   )
 }

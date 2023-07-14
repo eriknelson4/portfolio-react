@@ -46,7 +46,7 @@ const Contact = () => {
         });
       }
     } catch (e) {
-      console.log('An error occurred', e);
+      console.error('A form submission error occurred', e);
       setResponse({
         type: 'error',
         message: 'An error occured while submitting the form'

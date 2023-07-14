@@ -16,8 +16,6 @@ const NotFound = lazy(() => import('./Pages/NotFound/NotFound'));
 
 
 function App() {
-  const { userRole } = useUI();
-
   return (
     <Routes>
       <Route path="/" element={<About />} />
