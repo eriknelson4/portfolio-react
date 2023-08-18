@@ -94,6 +94,8 @@ const Guitar = () => {
             tuning = { tuning }
             setFretboardStyle = { setFretboardStyle }
             shiftTuning = { shiftTuning }
+            currentRoot = { notes[root] }
+            currentScale = { scales[scale].name }
             setTuning = { setTuning }
             setScale = { setScale }
             setRoot = { setRoot }

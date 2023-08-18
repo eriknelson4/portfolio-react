@@ -47,21 +47,3 @@ main { overflow:hidden; }
     }
   }
 }
-
-.controls { width:20em; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); margin:2rem; background-color:#fff; padding:2rem; font-size:2rem; grid-template-areas:'root scale' 'tuning tuning' 'custom-tuning custom-tuning'; gap:2em;
-  select { padding:0.5rem; width:100%;  }
-  .control {
-    &.root { grid-area:root; }
-    &.scale { grid-area:scale; }
-    &.tuning { grid-area:tuning; }
-    &.custom-tuning { grid-area:custom-tuning; }
-  }
-  label { display:block; padding-left:0.5rem; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
-  option { text-indent:0.5rem; line-height:4em; }
-  .guitar-tuner {
-    .peg { display:inline-block; vertical-align:top; width:1.5em; text-align:center; margin-right:0.25em;
-      span { display:block; line-height:1.5em; }
-      button { width:1.5em; height:1.5em; border:1px #000 solid; border-radius:50%; }
-    }
-  }
-}

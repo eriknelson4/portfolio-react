@@ -6,7 +6,7 @@ export const scales = {
     formula: [0,2,4,5,7,9,11]
   },
   'min': {
-    name:'Minor/Aeolian [Major 6]',
+    name:'Minor/Aeolian',
     formula: [0,2,3,5,7,8,10]
   },
   'harm-min': {
@@ -14,23 +14,23 @@ export const scales = {
     formula: [0,2,3,5,7,8,11]
   },
   'dorian': {
-    name:'Dorian [Major 2]',
+    name:'Dorian',
     formula: [0,2,3,5,7,9,10]
   },
   'phrygian': {
-    name:'Phrygian [Major 3]',
+    name:'Phrygian',
     formula: [0,1,3,5,7,8,10]
   },
   'lydian': {
-    name:'Lydian [Major 4]',
+    name:'Lydian',
     formula: [0,2,4,6,7,9,11]
   },
   'mixolydian': {
-    name:'Mixolydian [Major 5]',
+    name:'Mixolydian',
     formula: [0,2,4,5,7,9,10]
   },
   'locrian': {
-    name:'Locrian [Major 7]',
+    name:'Locrian',
     formula: [0,1,3,5,6,8,10]
   },
   'maj-pent': {

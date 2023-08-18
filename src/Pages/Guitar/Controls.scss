@@ -1,0 +1,84 @@
+$guitar-blue: #04458f;
+
+#controls-modal { background-color:#efefef; width:720px; max-width:calc(100vw - 40px);
+  .modal-content { padding:0; }
+  .controls { margin:0; font-size:2em; text-align:center;}
+  .control {
+    select { cursor:pointer; color:$guitar-blue; }
+  }
+}
+
+.controls { width:100%; display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); margin:2rem; padding:2rem; grid-template-areas:'state state' 'root scale' 'root tuning' 'custom-tuning style'; gap:1em; grid-auto-rows:min-content; align-items:self-start;
+  select { padding:0.5rem; width:100%;  }
+  .control {
+    &.state { grid-area:state; }
+    &.root { grid-area:root; }
+    &.scale { grid-area:scale; }
+    &.tuning { grid-area:tuning; }
+    &.custom-tuning { grid-area:custom-tuning; }
+    &.fretboard-style { grid-area:style; }
+  }
+  label { display:block; padding-left:0.5rem; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
+  option { text-indent:0.5rem; line-height:4em; }
+  .guitar-tuner { margin:0.5em 0;
+    .peg { display:inline-block; vertical-align:top; width:3em; text-align:center; margin:0;
+      span { display:block; line-height:1.5em; }
+      button { width:1.5em; background-color:$guitar-blue; color:#fff; height:1.5em; border:none; border-radius:50%;
+        &:focus, &:hover { outline:2px #fff solid; }
+        span { position:relative; top:-0.2em; font-weight:bold; font-size:1.2em; }
+      }
+    }
+  }
+}
+
+// Key Wheel Styles
+
+.half-wrap { font-size:10px; width:100%; padding-top:0.7em; aspect-ratio:2.5 / 1; overflow:hidden; position:relative; }
+
+.fifths { font-size:1em; width:100%; aspect-ratio:1 / 1; position:relative; cursor:grab; align-self:flex-end;
+  .wrap { position:relative; transform-origin:center; height:100%; width:100%; display:block;
+    &.settle { transition:transform 0.5s ease-in-out; }
+  }
+}
+
+.key { position:absolute; margin:0; padding:0; left:50%; transform-origin:bottom center; background:transparent; line-height:1em; text-align:center;
+  span { display:block; font-size:2em; font-family:"Arial", sans-serif; line-height:3em; position:relative; z-index:2;
+    &:after { content:''; position:absolute; right:0; top:0; height:120%; z-index:0; border-right:1px #ccc solid; transform-origin:top center; transform:rotate(15deg); }
+  }
+  &:nth-child(1) { transform:translatex(-50%); }
+  &:nth-child(2) { transform:translatex(-50%) rotate(30deg); }
+  &:nth-child(3) { transform:translatex(-50%) rotate(60deg); }
+  &:nth-child(4) { transform:translatex(-50%) rotate(90deg); }
+  &:nth-child(5) { transform:translatex(-50%) rotate(120deg); }
+  &:nth-child(6) { transform:translatex(-50%) rotate(150deg); }
+  &:nth-child(7) { transform:translatex(-50%) rotate(180deg); }
+  &:nth-child(8) { transform:translatex(-50%) rotate(210deg); }
+  &:nth-child(9) { transform:translatex(-50%) rotate(240deg); }
+  &:nth-child(10) { transform:translatex(-50%) rotate(270deg); }
+  &:nth-child(11) { transform:translatex(-50%) rotate(300deg); }
+  &:nth-child(12) { transform:translatex(-50%) rotate(330deg); }
+}
+
+.major { height:44em; width:44em; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  .key { width:12.5em; height:22em;
+    &.active {
+      span { color:#fff; }
+      &:after { content:''; position:absolute; right:0; top:0; transform-origin:top right; z-index:1; width:55%; height:40%; background-color:$guitar-blue; transform:rotate(15deg); }
+      &:before { content:''; position:absolute; left:0.6em; top:0; transform-origin:top left; z-index:1; width:55%; height:40%; background-color:$guitar-blue; transform:rotate(-15deg); }
+    }
+  }
+}
+.minor { height:34em; width:34em; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  .key { width:9.8em; height:17em;
+    span { font-size:1.6em; line-height:4em; }
+  }
+}
+
+.border { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:50%; overflow:hidden; }
+.major-border { height:44em; width:44em; border:2px #000 solid; background-color:#fff; box-shadow:0 0 1em 0.5em rgba(0,0,0,0.5); }
+.minor-border { height:33em; width:33em; border:1px #000 solid; background-color:#eaeaea; box-shadow:0 0 0.5em 0.25em rgba(0,0,0,0.5); }
+.inner-border { height:22em; width:22em; border:1px #000 solid; background-color:#333; z-index:22; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
+  button { background-color:#333; }
+}
+
+#drag-element { position:absolute; z-index:20; inset:0; }
