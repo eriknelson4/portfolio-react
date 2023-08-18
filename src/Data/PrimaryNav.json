@@ -20,6 +20,11 @@
     "roles": ["guest", "user", "admin"]
   },
   {
+    "title":"Experiments",
+    "url":"/experiments",
+    "roles": ["guest", "user", "admin"]
+  },
+  {
     "title":"Admin",
     "url":"/admin",
     "roles": ["admin"]

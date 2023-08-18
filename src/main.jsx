@@ -5,7 +5,9 @@ import Home from './Pages/Home/Home';
 const Skills = lazy(() => import('./Pages/Skills/Skills'));
 const Portfolio = lazy(() => import('./Pages/Portfolio/Portfolio'));
 const Contact = lazy(() => import('./Pages/Contact/Contact'));
+const Guitar = lazy(() => import('./Pages/Guitar/Guitar'));
 const Admin = lazy(() => import('./Pages/Admin/Admin'));
+const Experiments = lazy(() => import('./Pages/Experiments/Experiments'));
 const Users = lazy(() => import('./Pages/Admin/Users/Users'));
 const Settings = lazy(() => import('./Pages/Admin/Settings/Settings'));
 const Items = lazy(() => import('./Pages/Admin/Items/Items'));
@@ -28,8 +30,16 @@ const router = createBrowserRouter([
     element: <Suspense><Contact/></Suspense>
   },
   {
+    path: '/experiments',
+    element: <Suspense><Experiments/></Suspense>
+  },
+  {
     path: '/skills',
     element: <Suspense><Skills/></Suspense>
+  },
+  {
+    path: '/guitar',
+    element: <Suspense><Guitar/></Suspense>
   },
   {
     path: '/admin',
