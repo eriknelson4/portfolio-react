@@ -2,13 +2,7 @@
 @import './variables';
 @import './ui-elements';
 
-body { max-width:1920px; margin:0 auto; min-height:100vh;
-  &[data-color="0"] { background-image:linear-gradient(to bottom right, #38A2D7, #3c1053); }
-  &[data-color="1"] { background-image:linear-gradient(to bottom right, #3c1053, #721310); }
-  &[data-color="2"] { background-image:linear-gradient(to bottom right, #721310, #F56217); }
-  &[data-color="3"] { background-image:linear-gradient(to bottom right, #F56217, #17595a); }
-  &[data-color="4"] { background-image:linear-gradient(to bottom right, #17595a, #152466); }
-}
+body { max-width:1920px; margin:0 auto; min-height:100vh; background-image:linear-gradient(to bottom right, #38A2D7, #3c1053); }
 
 main { padding-block:4rem; background-color:rgba(255,255,255,0.5); }
 
