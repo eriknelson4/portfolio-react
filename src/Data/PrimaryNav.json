@@ -20,8 +20,8 @@
     "roles": ["guest", "user", "admin"]
   },
   {
-    "title":"Guitar",
-    "url":"/guitar",
+    "title":"Experiments",
+    "url":"/experiments",
     "roles": ["guest", "user", "admin"]
   },
   {

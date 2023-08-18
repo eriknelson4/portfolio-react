@@ -1,0 +1,86 @@
+[
+  {
+    "id":0,
+    "link":"https://www.dynatrap.com/",
+    "imgUrl":"/sites/dynatrap.jpg",
+    "title":"DynaTrap",
+    "subtitle":"www.dynatrap.com"
+  },
+  {
+    "id":1,
+    "link":"https://www.perkypet.com/",
+    "imgUrl":"/sites/perkypet.jpg",
+    "title":"Perky-Pet",
+    "subtitle":"www.perkypet.com"
+  },
+  {
+    "id":2,
+    "link":"https://www.victorpest.com/",
+    "imgUrl":"/sites/victorpest.jpg",
+    "title":"Victor Pest",
+    "subtitle":"www.victorpest.com"
+  },
+  {
+    "id":3,
+    "link":"https://www.saferbrand.com/",
+    "imgUrl":"/sites/saferbrand.jpg",
+    "title":"Safer Brand",
+    "subtitle":"www.saferbrand.com"
+  },
+  {
+    "id":4,
+    "link":"https://www.zarebasystems.com/",
+    "imgUrl":"/sites/zareba.jpg",
+    "title":"Zareba Systems",
+    "subtitle":"www.zarebasystems.com"
+  },
+  {
+    "id":5,
+    "link":"https://www.mosquitomagnet.com/",
+    "imgUrl":"/sites/mosquitomagnet.jpg",
+    "title":"Mosquito Magnet",
+    "subtitle":"www.mosquitomagnet.com"
+  },
+  {
+    "id":6,
+    "link":"https://www.havahart.com/",
+    "imgUrl":"/sites/havahart.jpg",
+    "title":"Havahart",
+    "subtitle":"www.havahart.com"
+  },
+  {
+    "id":7,
+    "link":"https://www.terro.com/",
+    "imgUrl":"/sites/terro.jpg",
+    "title":"TERRO",
+    "subtitle":"www.terro.com"
+  },
+  {
+    "id":8,
+    "link":"https://vlink.victorpest.com/",
+    "imgUrl":"/sites/vlink.jpg",
+    "title":"VLINK",
+    "subtitle":"vlink.victorpest.com"
+  },
+  {
+    "id":9,
+    "link":"https://www.woodstreambrands.ca/",
+    "imgUrl":"/sites/woodstreambrands.jpg",
+    "title":"Woodstream Brands",
+    "subtitle":"www.woodstreambrands.ca"
+  },
+  {
+    "id":10,
+    "link":"https://www.woodstream.com/",
+    "imgUrl":"/sites/woodstream.jpg",
+    "title":"Woodstream Corporate",
+    "subtitle":"www.woodstream.com"
+  },
+  {
+    "id":11,
+    "link":"https://www.woodstreampartnerportal.com/",
+    "imgUrl":"/sites/dynatrap.jpg",
+    "title":"Partner Portal",
+    "subtitle":"woodstreampartnerportal.com"
+  }
+]

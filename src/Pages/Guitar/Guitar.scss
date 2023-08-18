@@ -13,6 +13,14 @@ main { overflow:hidden; }
   }
 
   h1, h2 { text-align:center; max-width:100vw; }
+  h1 {
+    button { font-size:3rem;
+      svg { transition:transform 1s ease-in-out; }
+      &:hover, &:focus {
+        svg { transform:rotate(180deg); }
+      }
+    }
+  }
   h2 { margin-bottom:1em; text-transform:none; max-width:100vw; }
   .neck { border-right:0.3em #fff solid; background-color:#000000; }
   .fret-markers { display:grid;
