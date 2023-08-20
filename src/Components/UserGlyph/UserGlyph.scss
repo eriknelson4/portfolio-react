@@ -1,8 +1,8 @@
 @import '../../Styles/variables';
 
 button.pill {
-  font-size:1.2rem; padding:0.25em 1em; border-radius:2rem; color:#fff;
+  font-size:1.4rem; letter-spacing:1px; padding:0.25em 1em; border-radius:2rem; color:#fff; text-transform:uppercase; font-weight:bold;
   &.admin { background-color:$red; }
-  &.guest { background-color:$lt-gray; }
+  &.guest { background-color:$lt-gray; color:#000; }
   &.user { background-color:$highlight; }
 }

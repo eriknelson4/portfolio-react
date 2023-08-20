@@ -2,12 +2,7 @@ import { useState, useEffect } from 'react';
 import Fret from './Fret';
 import { notes } from '../../Data/scales';
 
-let scale = [];
-const buildScale = () => {
-
-}
-
-const String = ({ scale, shiftTuning, string, note, frets }) => {
+const String = ({ scale, note, frets }) => {
   const [ stringArray, setStringArray ] = useState([]);
   const stringRoot = notes[notes.indexOf(note)];
   useEffect(() => {
@@ -23,9 +18,7 @@ const String = ({ scale, shiftTuning, string, note, frets }) => {
   return (
 
     <div className="string">
-      {
-        <span className="string-root">{ stringRoot }</span>
-      }
+      <span className="string-root">{ stringRoot }</span>
       {
         stringArray.map((currentNote, idx) => {
           return (

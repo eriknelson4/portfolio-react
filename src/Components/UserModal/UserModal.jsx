@@ -1,4 +1,5 @@
 import { useUI } from '../../Context/UIContext';
+import './UserModal.scss';
 
 export const UserModal = ({ setModalOpen }) => {
   const { setUserRole } = useUI();

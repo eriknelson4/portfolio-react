@@ -7,11 +7,11 @@
     @media screen and (max-width:1279px) { width:calc(100% - 40px); max-width:640px; }
   }
 
-  .main-items, .website-wrap { display:grid; width:83.3%; margin:0 auto 8em auto;
+  .main-items, .website-wrap { display:grid; grid-gap:2em; width:83.3%; margin:0 auto 8em auto;
     grid-template-columns:repeat(5, minmax(0, 1fr));
     @media screen and (max-width:1599px) { grid-template-columns:repeat(4, minmax(0, 1fr)); }
     @media screen and (max-width:1279px) { grid-template-columns:repeat(3, minmax(0, 1fr)); }
-    @media screen and (max-width:767px) { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    @media screen and (max-width:959px) { grid-template-columns:repeat(2, minmax(0, 1fr)); }
     @media screen and (min-width:480px) {
       &:hover, &:focus-within {
         .item { opacity:0.5; }

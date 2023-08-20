@@ -1,12 +1,11 @@
 import { useEffect, useRef } from 'react';
 import tunings from '../../Data/Tunings';
-// import { settleRotation, updateIndex, dragHandler} from './keywheel';
-import { scales, notes } from '../../Data/scales';
+import { scales, notes } from '../../Data/Scales';
 import './Controls.scss';
 
 const Controls = ({ tuning, setFretboardStyle, currentRoot, currentScale, shiftTuning, setRoot, setTuning, setScale }) => {
 
-console.log(currentRoot);
+  const rootDropdown = useRef(null);
 
   const dragEl = useRef(null);
   const circle = useRef(null);
@@ -27,6 +26,13 @@ console.log(currentRoot);
     currentRotation = settledRotation;
   }
 
+  const rotateToIndex = (index) => {
+    console.log(notes[index]);
+    const newRotation = -1 * (index * 30);
+    circle.current.style.transform = `rotate(${newRotation}deg)`;
+    currentRotation = newRotation;
+  }
+
   const updateIndex = () => {
     let newIndex = -1 * Math.round(((currentRotation + newRotation) % 360) / 30);
     if (newIndex < 0) {
@@ -35,6 +41,10 @@ console.log(currentRoot);
     if (newIndex === -0) { newIndex = 0; }
     if (newIndex !== index) {
       index = newIndex;
+
+      // Update Dropdown
+      for (let el of rootDropdown.current.children) { el.removeAttribute('selected'); }
+      rootDropdown.current.children[index].setAttribute('selected', 'selected');
 
       // Convert from Circle of Fifths to Chromatic
       const rootIndex = notes.findIndex((val) => { return val == keyArray[index]; });
@@ -48,10 +58,12 @@ console.log(currentRoot);
   const dragHandler = (drag) => {
     switch (drag.type) {
       case 'dragstart':
+      case 'touchstart':
         circle.current.classList.remove('settle');
         startX = drag.touch ? drag.event.touches[0].clientX : drag.event.clientX;
         break;
       case 'drag':
+      case 'touchmove':
         if (drag.event.screenX === 0) { return; };
         const moveX = drag.touch ? drag.event.touches[0].clientX : drag.event.clientX;
         const distance = (startX - moveX) * 0.15;
@@ -60,25 +72,39 @@ console.log(currentRoot);
         updateIndex();
         break;
       case 'dragend':
+      case 'touchend':
         currentRotation = newRotation + currentRotation;
         settleRotation();
         break;
     }
   }
 
+  const rootDropdownHandler = () => {
+    const newRoot = rootDropdown.current.value;
+    const rootIndex = notes.findIndex((val) => { return val == keyArray[newRoot]; });
+    rotateToIndex(newRoot);
+    setRoot(rootIndex);
+    for (let el of major.current.children) { el.classList.remove('active'); }
+    major.current.children[newRoot].classList.add('active');
+  }
+
   useEffect(() => {
 
-    dragEl.current.addEventListener('drag', (e) => { dragHandler({ type:'drag', touch:false, event: e }); });
-    dragEl.current.addEventListener('dragstart', (e) => { dragHandler({ type:'dragstart', touch:false, event: e })});
-    dragEl.current.addEventListener('dragend', (e) => { dragHandler({ type:'dragend', touch:false, event: e })});
-    dragEl.current.addEventListener('touchmove', (e) => { dragHandler({ type:'drag', touch:true, event: e }); }, { passive: true });
-    dragEl.current.addEventListener('touchstart', (e) => { dragHandler({ type:'dragstart', touch:true, event: e })}, { passive: true });
-    dragEl.current.addEventListener('touchend', (e) => { dragHandler({ type:'dragend', touch:true, event: e })}, { passive: true });
+    // Add drag and touch event listeners
+
+    ['drag', 'dragstart', 'dragend', 'touchmove', 'touchstart', 'touchend'].forEach((eventName) => {
+      const touchVal = eventName.indexOf('touch') == 0 ? true : false;
+      dragEl.current.addEventListener(eventName, (e) => {
+        dragHandler({ type:eventName, touch:touchVal, event:e });
+      }, { passive:true });
+    })
 
     // Cleanup
 
     return () => {
-      // window.removeEventListener('keydown', handleKeyDown);
+      // ['drag', 'dragstart', 'dragend', 'touchmove', 'touchstart', 'touchend'].forEach((eventName) => {
+      //   dragEl.current.removeEventListener(eventName);
+      // });
     };
 
   }, [])
@@ -134,6 +160,24 @@ console.log(currentRoot);
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="control root-dropdown">
+        <label htmlFor="root-dropdown">Root</label>
+        <select onClick={ rootDropdownHandler } ref={ rootDropdown } name="root-dropdown" id="root-dropdown">
+          <option value="0">C</option>
+          <option value="1">G</option>
+          <option value="2">D</option>
+          <option value="3">A</option>
+          <option value="4">E</option>
+          <option value="5">B/C&#x266d;</option>
+          <option value="6">G&#x266d;/F&#x266f;</option>
+          <option value="7">D&#x266d;/C&#x266f;</option>
+          <option value="8">A&#x266d;</option>
+          <option value="9">E&#x266d;</option>
+          <option value="10">B&#x266d;</option>
+          <option value="11">F</option>
+        </select>
       </div>
 
       <div className="control scale">

@@ -1,5 +1,4 @@
 const Website = ({title, subtitle, link, imgUrl}) => {
-  console.log(imgUrl);
   return (
     <div className="item">
       <a href={ link } target="_blank">

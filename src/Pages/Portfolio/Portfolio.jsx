@@ -55,7 +55,6 @@ const Portfolio = () => {
 
             {
               websites.map((item) => {
-                console.log(item.imgUrl);
                 return (
                   <Website
                     key={ item.id }

@@ -1,12 +1,19 @@
 @import '../../Styles/variables';
 
 #about {
-   .column-wrap { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); grid-gap:2em; width:83.3%; margin:0 auto; align-items:center;
+   .column-wrap {
+    h2 { text-align:center; color:#fff; font-size:6em; padding:0.75em 0 1em 0; }
     @media screen and (max-width:959px) { grid-template-columns:minmax(0, 1fr); }
   }
-  .tools-wrap { display:grid; grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
-    .tool { padding:2rem;
+  .about-copy { padding-bottom:8em; width:60%; margin:0 auto; color:#fff;
+    @media screen and (max-width:767px) { width:calc(100% - 40px); max-width:440px; }
+  }
+  .tools { background-color:#fff; padding:3em 0; }
+  .tools-wrap { display:grid; width:60%; margin:0 auto; grid-template-columns:repeat(auto-fit, minmax(100px, 1fr)); gap:4em;
+    @media screen and (max-width:767px) { width:calc(100% - 40px); grid-template-columns:repeat(auto-fit, minmax(75px, 1fr)); }
+    .tool {
       img { max-width:100%; display:block; height:auto; }
     }
   }
+
 }

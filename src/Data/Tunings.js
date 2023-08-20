@@ -38,6 +38,14 @@ const tunings = {
   'drop-a': {
     name:'Drop A, 7 String',
     formula: ['A','E','A','D','G','B','E']
+  },
+  'std-8-f#': {
+    name:'F# Standard, 8 String',
+    formula: ['F#','A','E','A','D','G','B','E']
+  },
+  'drop-e': {
+    name:'Drop E, 8 String',
+    formula: ['E','A','E','A','D','G','B','E']
   }
 }
 

@@ -10,14 +10,20 @@ export const Modal = ({ id, children, isOpen, setModalOpen }) => {
   }
   const modalElement = useRef();
 
+  const bodyClickHandler = (e) => {
+    if (e.target.tagName === 'DIALOG') { closeModal(); }
+  }
+
   useEffect(() => {
     const el = modalElement.current;
     if (isOpen) {
       document.getElementById('root').classList.add('modal-open');
+      document.querySelector('body').addEventListener('click', bodyClickHandler);
       el.showModal();
     }
     if (isOpen === false) {
       document.getElementById('root').classList.remove('modal-open');
+      document.querySelector('body').removeEventListener('click', bodyClickHandler);
       el.close();
     }
   }, [isOpen]);

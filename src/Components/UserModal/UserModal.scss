@@ -1,0 +1,6 @@
+#user-modal {
+  p { font-size:2em; }
+  a { text-decoration:underline; font-weight:600; text-decoration:none;
+    &:hover, &:focus { text-decoration:underline; text-underline-offset:0.1em; text-decoration-thickness:1px; }
+  }
+}

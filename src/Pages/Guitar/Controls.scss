@@ -1,31 +1,38 @@
-$guitar-blue: #04458f;
+$guitar-highlight: #3d064e;
 
-#controls-modal { background-color:#efefef; width:720px; max-width:calc(100vw - 40px);
+#controls-modal { background-color:#fff; width:720px; max-width:calc(100vw - 40px); padding-bottom:2em;
+  @media screen and (max-width:767px) { width:calc(100% - 40px); max-width:440px; font-size:10px; }
+  @media screen and (max-width:479px) { font-size:2.1vw; }
   .modal-content { padding:0; }
-  .controls { margin:0; font-size:2em; text-align:center;}
+  .controls { margin:0; font-size:1em; text-align:center;}
   .control {
-    select { cursor:pointer; color:$guitar-blue; }
+    select { cursor:pointer; color:$guitar-highlight; border-bottom:2px solid #ddd; }
   }
 }
 
-.controls { width:100%; display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); margin:2rem; padding:2rem; grid-template-areas:'state state' 'root scale' 'root tuning' 'custom-tuning style'; gap:1em; grid-auto-rows:min-content; align-items:self-start;
-  select { padding:0.5rem; width:100%;  }
-  .control {
+.controls { width:100%; display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); margin:2rem; padding:2rem; grid-template-areas:'state state' 'root root-dropdown' 'root scale' 'custom-tuning tuning' 'custom-tuning style'; gap:1em; grid-auto-rows:min-content; align-items:self-start;
+  @media screen and (max-width:767px) { grid-template-columns:repeat(2, minmax(0, 1fr)); grid-template-areas:'state state' 'root root' 'root-dropdown scale' 'tuning style' 'custom-tuning custom-tuning';
+    h2 { font-size:3.6em; margin-bottom:0; }
+  }
+  @media screen and (max-width:479px) { padding-left:0; padding-right:0; }
+  select { padding:0.5rem; width:100%; font-size:2em; }
+  .control { padding-bottom:1em;
     &.state { grid-area:state; }
     &.root { grid-area:root; }
     &.scale { grid-area:scale; }
     &.tuning { grid-area:tuning; }
-    &.custom-tuning { grid-area:custom-tuning; }
+    &.root-dropdown { grid-area:root-dropdown; }
+    &.custom-tuning { grid-area:custom-tuning; align-self:flex-start; }
     &.fretboard-style { grid-area:style; }
   }
-  label { display:block; padding-left:0.5rem; font-weight:bold; font-size:2rem; text-transform:uppercase; margin-bottom:0.25em; }
-  option { text-indent:0.5rem; line-height:4em; }
+  label { display:block; padding-left:0.5rem; font-size:2.4em; }
+  option { text-indent:0.5rem; font-size:0.8em; line-height:4em; }
   .guitar-tuner { margin:0.5em 0;
-    .peg { display:inline-block; vertical-align:top; width:3em; text-align:center; margin:0;
+    .peg { display:inline-block; font-size:2em; vertical-align:top; width:2.7em; text-align:center; margin:0;
       span { display:block; line-height:1.5em; }
-      button { width:1.5em; background-color:$guitar-blue; color:#fff; height:1.5em; border:none; border-radius:50%;
+      button { width:1.5em; background-color:transparent; color:#fff; height:1.5em; border:none; border-radius:50%;
         &:focus, &:hover { outline:2px #fff solid; }
-        span { position:relative; top:-0.2em; font-weight:bold; font-size:1.2em; }
+        span { position:relative; top:-0.2em; font-weight:bold; font-size:1.2em; color:$guitar-highlight; }
       }
     }
   }
@@ -33,9 +40,11 @@ $guitar-blue: #04458f;
 
 // Key Wheel Styles
 
-.half-wrap { font-size:10px; width:100%; padding-top:0.7em; aspect-ratio:2.5 / 1; overflow:hidden; position:relative; }
+.half-wrap { font-size:10px; width:100%; padding-top:1.2em; aspect-ratio:2.5 / 1; overflow:hidden; position:relative; }
 
 .fifths { font-size:1em; width:100%; aspect-ratio:1 / 1; position:relative; cursor:grab; align-self:flex-end;
+  @media screen and (max-width:767px) { font-size:0.92em; }
+  @media screen and (max-width:479px) { font-size:1.92vw; }
   .wrap { position:relative; transform-origin:center; height:100%; width:100%; display:block;
     &.settle { transition:transform 0.5s ease-in-out; }
   }
@@ -63,8 +72,8 @@ $guitar-blue: #04458f;
   .key { width:12.5em; height:22em;
     &.active {
       span { color:#fff; }
-      &:after { content:''; position:absolute; right:0; top:0; transform-origin:top right; z-index:1; width:55%; height:40%; background-color:$guitar-blue; transform:rotate(15deg); }
-      &:before { content:''; position:absolute; left:0.6em; top:0; transform-origin:top left; z-index:1; width:55%; height:40%; background-color:$guitar-blue; transform:rotate(-15deg); }
+      &:after { content:''; position:absolute; right:0; top:0; transform-origin:top right; z-index:1; width:55%; height:40%; background-color:$guitar-highlight; transform:rotate(15deg); }
+      &:before { content:''; position:absolute; left:0.6em; top:0; transform-origin:top left; z-index:1; width:55%; height:40%; background-color:$guitar-highlight; transform:rotate(-15deg); }
     }
   }
 }

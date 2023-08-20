@@ -24,7 +24,7 @@ main { overflow:hidden; }
   h2 { margin-bottom:1em; text-transform:none; max-width:100vw; }
   .neck { border-right:0.3em #fff solid; background-color:#000000; }
   .fret-markers { display:grid;
-    span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8em; color:#000; }
+    span { display:block; margin-bottom:0.5em; text-align:center; font-size:1.8em; color:#fff; }
   }
   .string { display:grid; position:relative;
     .string-root { background-color:#000; color:#fff; text-align:center; display:grid; align-content:center; font-size:1.4em; font-weight:bold; }
