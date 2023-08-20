@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import tunings from '../../Data/Tunings';
-import { scales, notes } from '../../Data/Scales';
+import { scales, notes } from '../../Data/ScaleLibrary';
 import './Controls.scss';
 
 const Controls = ({ tuning, setFretboardStyle, currentRoot, currentScale, shiftTuning, setRoot, setTuning, setScale }) => {

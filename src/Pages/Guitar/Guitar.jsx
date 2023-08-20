@@ -3,7 +3,7 @@ import String from './String';
 import Controls from './Controls';
 import Standard from '../../Templates/Standard';
 import tunings from '../../Data/Tunings';
-import { scales, notes } from '../../Data/Scales';
+import { scales, notes } from '../../Data/ScaleLibrary';
 import { Modal } from '../../Components/Modals/Modal';
 import { BsFillGearFill } from 'react-icons/bs';
 

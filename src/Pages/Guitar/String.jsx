@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Fret from './Fret';
-import { notes } from '../../Data/scales';
+import { notes } from '../../Data/ScaleLibrary';
 
 const String = ({ scale, note, frets }) => {
   const [ stringArray, setStringArray ] = useState([]);
