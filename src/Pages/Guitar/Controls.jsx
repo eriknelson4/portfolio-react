@@ -14,31 +14,31 @@ const Controls = ({ tuning, setFretboardStyle, currentRoot, currentScale, shiftT
 
   let index = 0;
   let startX;
-  let currentRotation = 0;
+  let currentRotation = useRef(0);
   let newRotation;
 
   const settleRotation = () => {
     circle.current.classList.add('settle');
     let settledRotation = -1 * (index * 30);
-    const distance = Math.abs(settledRotation - currentRotation);
+    const distance = Math.abs(settledRotation - currentRotation.current);
     if (distance > 180) { settledRotation += 360; }
     circle.current.style.transform = `rotate(${settledRotation}deg)`;
-    currentRotation = settledRotation;
+    currentRotation.current = settledRotation;
   }
 
   const rotateToIndex = (index) => {
-    console.log(notes[index]);
-    const newRotation = -1 * (index * 30);
+    newRotation = -1 * (index * 30);
     circle.current.style.transform = `rotate(${newRotation}deg)`;
-    currentRotation = newRotation;
+    currentRotation.current = newRotation;
   }
 
   const updateIndex = () => {
-    let newIndex = -1 * Math.round(((currentRotation + newRotation) % 360) / 30);
+    let newIndex = (-1 * Math.round(((currentRotation.current + newRotation) % 360) / 30) % 12);
     if (newIndex < 0) {
       newIndex = 12 + newIndex;
     }
-    if (newIndex === -0) { newIndex = 0; }
+    if (newIndex == 12) { newIndex = 0; }
+    if (newIndex === -0 | newIndex == 0) { newIndex = 0; }
     if (newIndex !== index) {
       index = newIndex;
 
@@ -68,12 +68,12 @@ const Controls = ({ tuning, setFretboardStyle, currentRoot, currentScale, shiftT
         const moveX = drag.touch ? drag.event.touches[0].clientX : drag.event.clientX;
         const distance = (startX - moveX) * 0.15;
         newRotation = (-1 * distance) % 360;
-        circle.current.style.transform = `rotate(${currentRotation + newRotation}deg)`;
+        circle.current.style.transform = `rotate(${currentRotation.current + newRotation}deg)`;
         updateIndex();
         break;
       case 'dragend':
       case 'touchend':
-        currentRotation = newRotation + currentRotation;
+        currentRotation.current = newRotation + currentRotation.current;
         settleRotation();
         break;
     }
