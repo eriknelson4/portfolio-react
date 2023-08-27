@@ -1,12 +1,12 @@
 import { useUI } from '../../Context/UIContext';
 import './UserModal.scss';
 
-export const UserModal = ({ setModalOpen }) => {
+export const UserModal = ({ setModalState }) => {
   const { setUserRole } = useUI();
 
   const setRole = (role) => {
     setUserRole(role);
-    setModalOpen(false);
+    setModalState(false);
   }
 
   return (

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Modal } from '../../Components/Modals/Modal';
+import Modal from '../../Components/Modals/Modal';
 import WinModal from './WinModal';
 import words from './words5.json';
 import './WordThing.scss';
@@ -16,20 +16,8 @@ const defaultState = {
 }
 
 function WordThing() {
-  const [ currentModal, setCurrentModal ] = useState('');
-  const [ isModalOpen, setIsModalOpen ] = useState(null);
-
-  useEffect((val) => {
-    setIsModalOpen(val);
-  }, [isModalOpen])
-
-  const openWinModal = (id) => {
-    setCurrentModal({ ...portfolioItems[id] });
-    setIsModalOpen(true);
-  }
-
-
   const [gameState, setGameState] = useState({... defaultState });
+  const [modalState, setModalState] = useState(false);
 
   const resetGame = () => {
     const newWord = words[Math.floor(Math.random() * words.length)];
@@ -57,15 +45,20 @@ function WordThing() {
       history.push(letterScore);
     }
 
-    console.log(history);
-
     let newHistory = [...gameState.history, history];
+
     setGameState({
       ...gameState,
       history: newHistory,
       victory: (gameState.word === newEntry)
     });
   }
+
+  useEffect(() => {
+    if (gameState.victory) {
+      setModalState(true);
+    }
+  }, [gameState]);
 
   useEffect(() => {
     const newWord = words[Math.floor(Math.random() * words.length)];
@@ -78,6 +71,7 @@ function WordThing() {
   return (
     <>
       <h1>Word Thing</h1>
+      <button onClick={ () => { setModalState(true); } }>Open Modal</button>
       <div className="game-wrap">
         {
           gameState.history.map((item, i) => {
@@ -89,9 +83,10 @@ function WordThing() {
         }
       </div>
 
-      <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="portfolio-modal">
-        <WinModal currentModal={ currentModal }/>
+      <Modal setModalState={ setModalState } modalState={ modalState } id="test-modal">
+        <WinModal setModalState={ setModalState } resetGame={ resetGame }/>
       </Modal>
+
     </>
   );
 }

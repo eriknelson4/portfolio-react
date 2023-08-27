@@ -25,7 +25,6 @@ function NewEntry({ processEntry, words }) {
 
     // Is new entry legit
 
-
     // Update state for the current word
 
     const newWord = [...currentWord];

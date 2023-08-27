@@ -220,7 +220,7 @@ const Controls = ({ tuning, setFretboardStyle, currentRoot, currentScale, shiftT
           {
             tuning.map((note, i) => {
               return (
-                <div className="peg">
+                <div key={`tuner-${i}`} className="peg">
                   <button onClick={ (e) => { shiftTuning((tuning.length - 1) - i, 1) } }><span>+</span></button>
                   <span>{ note }</span>
                   <button onClick={ (e) => { shiftTuning((tuning.length - 1) - i, -1) } }><span>-</span></button>

@@ -1,9 +1,13 @@
-const WinModal = ({ setModalOpen }) => {
+function WinModal({ setModalState, resetGame }) {
+
+  const handleReset = () => {
+    setModalState(false);
+    resetGame();
+  }
+
   return (
-    <>
-      <h3>You Won!</h3>
-    </>
-  )
+    <button onClick={ handleReset }>New Game</button>
+  );
 }
 
 export default WinModal;

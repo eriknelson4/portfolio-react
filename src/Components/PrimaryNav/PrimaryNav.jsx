@@ -3,14 +3,11 @@ import { useUI } from '../../Context/UIContext';
 import primaryNavOptions from '../../Data/PrimaryNav.json';
 import UserGlyph from '../../Components/UserGlyph/UserGlyph';
 import { NavLink } from 'react-router-dom';
-import { Modal } from '../Modals/Modal';
-import { UserModal } from '../UserModal/UserModal';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
 import './PrimaryNav.scss';
 
 const PrimaryNav = () => {
-  const [ isModalOpen, setIsModalOpen ] = useState(null);
   const [ menuOpen, setMenuOpen ] = useState(false);
   const { userRole } = useUI();
 
@@ -28,10 +25,6 @@ const PrimaryNav = () => {
   useEffect(() => {
     updateAria();
   }, [menuOpen]);
-
-  useEffect((val) => {
-    setIsModalOpen(val);
-  }, [isModalOpen])
 
   return (
     <>
@@ -54,12 +47,9 @@ const PrimaryNav = () => {
               }
             })
           }
-          <UserGlyph setModalOpen={ setIsModalOpen } />
+          <UserGlyph/>
         </ul>
       </nav>
-      <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="user-modal">
-        <UserModal setModalOpen={ setIsModalOpen } />
-      </Modal>
     </>
   )
 }

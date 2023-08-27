@@ -4,13 +4,13 @@ import Controls from './Controls';
 import Standard from '../../Templates/Standard';
 import tunings from '../../Data/Tunings';
 import { scales, notes } from '../../Data/ScaleLibrary';
-import { Modal } from '../../Components/Modals/Modal';
+import Modal from '../../Components/Modals/Modal';
 import { BsFillGearFill } from 'react-icons/bs';
 
 import './Guitar.scss';
 
 const Guitar = () => {
-  const [ isModalOpen, setIsModalOpen ] = useState(null);
+  const [ modalState, setModalState ] = useState(null);
   const [ frets, setFrets ] = useState(24);
   const [ tuning, setTuning ] = useState(tunings['std-6'].formula);
   const [ scale, setScale ] = useState('maj');
@@ -29,10 +29,6 @@ const Guitar = () => {
     setTuning([...newTuning]);
   }
 
-  useEffect((val) => {
-    setIsModalOpen(val);
-  }, [isModalOpen])
-
   useEffect(() => {
     let startScale = scales[scale].formula;
     let newUserScale = [];
@@ -47,7 +43,7 @@ const Guitar = () => {
     <>
       <Standard>
         <div className={ `guitar ${fretboardStyle}` }>
-          <h1>Guitar <button onClick={ () => { setIsModalOpen(true); } } ><BsFillGearFill/></button></h1>
+          <h1>Guitar <button onClick={ () => { setModalState(true); } } ><BsFillGearFill/></button></h1>
 
           <h2>{ notes[root] } { scales[scale].name }</h2>
 
@@ -89,7 +85,7 @@ const Guitar = () => {
         </div>
       </Standard>
 
-      <Modal isOpen={ isModalOpen } setModalOpen={ setIsModalOpen } id="controls-modal">
+      <Modal modalState={ modalState } setModalState={ setModalState } id="controls-modal">
         <Controls
             tuning = { tuning }
             setFretboardStyle = { setFretboardStyle }
