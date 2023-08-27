@@ -35,13 +35,13 @@ const Experiments = () => {
                 <p>Tool for finding scales and modes visually on the guitar and other stringed instruments.</p>
               </div>
             </div>
-            {/* <div className="experiment">
-              <NavLink className="experiment-link" to="/guitar">Guitar</NavLink>
+            <div className="experiment">
+              <NavLink className="experiment-link" to="/word-thing">Guitar</NavLink>
               <div className="experiment-content">
-                <h3>Wordle</h3>
-                <p>Tool for finding scales and modes visually on the guitar and other stringed instruments.</p>
+                <h3>Word-Thing</h3>
+                <p>A clone of that game, with the guessing of the word. You know what I'm talking about.</p>
               </div>
-            </div> */}
+            </div>
           </section>
         </article>
       </Standard>

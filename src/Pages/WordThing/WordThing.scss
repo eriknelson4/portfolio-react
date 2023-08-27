@@ -1,0 +1,28 @@
+.new-entry, .past-entry { font-size:30px; color:#fff; }
+
+.game-wrap { width:30rem; margin:0 auto; }
+h1 { text-align:center; }
+
+.past-entry { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:1rem; margin-top:2rem;
+  .letter { aspect-ratio:1 /1; display:block; background-color:#fff; border-radius:0.25em; display:grid; align-items:center;
+    span { font-size:3rem; display:block; text-align:center; color:#000; font-weight:bold; }
+    &.wrong { background-color:rgb(167, 167, 167); }
+    &.partial { background-color:rgb(243, 212, 75); }
+    &.correct { background-color:rgb(98, 216, 98); }
+  }
+}
+
+.new-entry { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:1rem; width:30rem; margin-top:2rem;
+  input { aspect-ratio:1 /1; display:block; background-color:#fff; border-radius:0.25em; color:#000; font-size:3rem; text-align:center; text-transform:uppercase; font-weight:bold;
+    &:focus { outline:3px #c59207 solid; }
+    &.invalid { opacity:0.5; }
+  }
+  .submit-entry { text-align:center; grid-column:span 5; background-color:#000; color:#fff; aspect-ratio:6 / 1; margin-top:0.25em;
+    span { position:relative; top:-0.1em;}
+    &[disabled] { opacity:0.5; }
+  }
+}
+
+.new-game-button { margin-top:1em; display:block; width:100%; background-color:#000; font-size:2em; color:#fff; padding:0.25em; text-align:center;
+  &[disabled] { opacity:0.5; }
+}

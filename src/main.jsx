@@ -12,6 +12,8 @@ const Users = lazy(() => import('./Pages/Admin/Users/Users'));
 const Settings = lazy(() => import('./Pages/Admin/Settings/Settings'));
 const Items = lazy(() => import('./Pages/Admin/Items/Items'));
 const NotFound = lazy(() => import('./Pages/NotFound/NotFound'));
+const WordThing = lazy(() => import('./Pages/WordThing/WordThing'));
+
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { UIProvider } from './Context/UIContext';
 import './Styles/index.scss';
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: '/guitar',
     element: <Suspense><Guitar/></Suspense>
+  },
+  {
+    path: '/word-thing',
+    element: <Suspense><WordThing/></Suspense>
   },
   {
     path: '/admin',
