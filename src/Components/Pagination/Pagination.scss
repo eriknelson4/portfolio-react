@@ -5,12 +5,12 @@
     &[aria-selected="true"] { color:$highlight; background-color:#000; }
   }
 
-  .ellipsis { background-color:transparent; color:#000; font-size:2rem; }
+  .ellipsis { background-color:transparent; color:#fff; font-size:2rem; }
 
   .page-size { display:inline-block; margin-left:2rem;
-    label { font-size:1.4rem; text-transform:uppercase; font-weight:bold;  }
-    select { font-size:1.4rem; padding:0.5rem; border:1px #000 solid; margin-left:1rem;
-      option { padding:1rem; }
+    label { font-size:1.4rem; text-transform:uppercase; font-weight:bold; color:#fff; }
+    select { font-size:1.4rem; padding:0.5rem; border:1px #fff solid; margin-left:1rem; color:#fff;
+      option { color:#000; }
     }
     @media screen and (max-width:479px) { display:block; margin-left:0; margin-top:1rem;  }
   }

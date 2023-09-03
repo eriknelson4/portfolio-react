@@ -1,24 +1,8 @@
 import Standard from '../../Templates/Standard';
 import './Home.scss';
+import tools from './tools.json';
 
 const About = () => {
-
-  const skills = [
-    { title: 'HTML', imgurl: 'html.png' },
-    { title: 'CSS', imgurl: 'css.png' },
-    { title: 'JavaScript', imgurl: 'javascript.png' },
-    { title: 'TypeScript', imgurl: 'typescript.png' },
-    { title: 'React', imgurl: 'react.png' },
-    { title: 'SASS', imgurl: 'sass.png' },
-    { title: 'Git', imgurl: 'git.png' },
-    { title: 'NodeJS', imgurl: 'node-js.png' },
-    { title: 'Docker', imgurl: 'docker.png' },
-    { title: 'Power Automate', imgurl: 'power-automate.png' },
-    { title: 'Google Cloud', imgurl: 'google-cloud.png' },
-    { title: 'Adobe Creative Cloud', imgurl: 'creative-cloud.png' },
-    { title: 'Magento', imgurl: 'magento.png' }
-  ]
-
   return (
     <Standard id="about">
       <div className="main-content column-wrap">
@@ -31,10 +15,10 @@ const About = () => {
         <div className="tools">
           <div className="tools-wrap">
             {
-              skills.map((skill, i) => {
+              tools.map((tool, i) => {
                 return (
-                  <div key={ i } className="tool">
-                    <img src={ '/skills/' + skill.imgurl } alt={ skill.title } title={ skill.title } width="300" height="300"/>
+                  <div key={ `tool-${ i }` } className="tool">
+                    <img src={ '/skills/' + tool.imgurl } alt={ tool.title } title={ tool.title } width="300" height="300"/>
                   </div>
                 )
               })

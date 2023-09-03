@@ -1,6 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ProtectedRoute from "./Components/ProtectedRoute";
+import { UIProvider } from './Context/UIContext';
+import './Styles/index.scss';
+
 import Home from './Pages/Home/Home';
 const Skills = lazy(() => import('./Pages/Skills/Skills'));
 const Portfolio = lazy(() => import('./Pages/Portfolio/Portfolio'));
@@ -12,9 +16,6 @@ const Users = lazy(() => import('./Pages/Admin/Users/Users'));
 const Settings = lazy(() => import('./Pages/Admin/Settings/Settings'));
 const Items = lazy(() => import('./Pages/Admin/Items/Items'));
 const NotFound = lazy(() => import('./Pages/NotFound/NotFound'));
-import ProtectedRoute from "./Components/ProtectedRoute";
-import { UIProvider } from './Context/UIContext';
-import './Styles/index.scss';
 
 const router = createBrowserRouter([
   {
@@ -61,7 +62,6 @@ const router = createBrowserRouter([
     path: '*',
     element: <Suspense><NotFound/></Suspense>
   }
-
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -4,7 +4,7 @@ import Pagination from '../Pagination/Pagination';
 import UserRow from './UserRow';
 import EditUserModal from '../EditUserModal/EditUserModal';
 import axios from 'axios';
-import schema from '../..//Data/UserTableSchema.json';
+import schema from './UserTableSchema.json';
 import './UserList.scss';
 
 const Admin = () => {

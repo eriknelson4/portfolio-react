@@ -28,11 +28,11 @@ const AdminSideMenu = () => {
       {
         sideNavItems.map((item, i) =>
           <NavLink
-            key={ `admin-side-nav-${ i }`}
+            key={ `admin-side-nav-${ i }` }
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
             to={ item.url }
             end>
-            {item.icon}
+            { item.icon }
           </NavLink>
         )
       }

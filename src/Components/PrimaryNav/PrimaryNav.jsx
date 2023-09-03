@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useUI } from '../../Context/UIContext';
-import primaryNavOptions from '../../Data/PrimaryNav.json';
+import primaryNavOptions from './PrimaryNav.json';
 import UserGlyph from '../../Components/UserGlyph/UserGlyph';
 import { NavLink } from 'react-router-dom';
 import { Modal } from '../Modals/Modal';
