@@ -1,18 +1,20 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../../Components/Modals/Modal';
 import WinModal from './WinModal';
-import words from './words5.json';
-import './WordThing.scss';
+import words from './data/words5.json';
+import './styles/WordThing.scss';
 import PastEntry from './PastEntry';
 import NewEntry from './NewEntry';
 import NewGame from './NewGame';
+import Guesses from './Guesses';
 
 const defaultState = {
   word: null,
   turn:0,
   turnLimit:6,
   history:[],
-  victory: false
+  victory: null,
+  guessedLetters: []
 }
 
 function WordThing() {
@@ -46,11 +48,15 @@ function WordThing() {
     }
 
     let newHistory = [...gameState.history, history];
+    let entryArray = new Set(newEntry);
+    let newGuessedLetters = new Set([...gameState.guessedLetters, ...entryArray]);
+    console.log(newGuessedLetters);
 
     setGameState({
       ...gameState,
       history: newHistory,
-      victory: (gameState.word === newEntry)
+      victory: (gameState.word === newEntry),
+      guessedLetters: [...newGuessedLetters]
     });
   }
 
@@ -81,10 +87,11 @@ function WordThing() {
         {
           ( gameState.victory ? <NewGame resetGame={ resetGame }/>  : <NewEntry words={ words } processEntry={ processEntry }/> )
         }
+        <Guesses guessedLetters={ gameState.guessedLetters }/>
       </div>
 
-      <Modal setModalState={ setModalState } modalState={ modalState } id="test-modal">
-        <WinModal setModalState={ setModalState } resetGame={ resetGame }/>
+      <Modal setModalState={ setModalState } modalState={ modalState } id="win-modal">
+        <WinModal win={ gameState.victory } history={ gameState.history } word={gameState.word} setModalState={ setModalState } resetGame={ resetGame }/>
       </Modal>
 
     </>

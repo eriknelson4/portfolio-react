@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 function NewEntry({ processEntry, words }) {
 
-  const [validState, setValidState] = useState([false, false, false, false, false]);
+  const [validState, setValidState] = useState(new Array(5).fill(false));
   const [submitActive, setSubmitActive] = useState(false);
   const [currentWord, setCurrentWord] = useState(new Array(5).fill(' '));
   const [turn, setTurn] = useState(0);
@@ -11,7 +11,6 @@ function NewEntry({ processEntry, words }) {
   const submitEntryButton = useRef(null);
 
   const validate = (id, e) => {
-
     let allValid = true;
 
     // set state for individual character fields
@@ -23,13 +22,14 @@ function NewEntry({ processEntry, words }) {
     if (!valid) { allValid = false; }
     setValidState([...newState]);
 
-    // Is new entry legit
-
     // Update state for the current word
 
     const newWord = [...currentWord];
     newWord[id] = char;
     setCurrentWord([...newWord]);
+
+    // Is new entry on the list of words
+    if (words.indexOf(newWord.join('')) < 0) { allValid = false; }
 
     // Set submit button state
 
@@ -55,6 +55,7 @@ function NewEntry({ processEntry, words }) {
       }
     }
     entryRef.current.children[0].focus();
+    setSubmitActive(false);
   }, [turn])
 
   useEffect(() => {

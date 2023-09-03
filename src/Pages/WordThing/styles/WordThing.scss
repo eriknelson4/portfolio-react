@@ -26,3 +26,31 @@ h1 { text-align:center; }
 .new-game-button { margin-top:1em; display:block; width:100%; background-color:#000; font-size:2em; color:#fff; padding:0.25em; text-align:center;
   &[disabled] { opacity:0.5; }
 }
+
+.guesses{ display:grid; grid-template-columns:repeat(9, minmax(0, 1fr)); gap:0.5em; margin-top:4em;
+  .guess { aspect-ratio:1 / 1; display:grid; align-items:center; text-align:center; font-size:2em; color:#000; font-weight:bold; border-radius:5px; cursor:default;
+    &.unused { background-color:rgb(167, 167, 167); }
+    &.used { background-color:rgb(98, 216, 98);  }
+  }
+}
+
+// Win Modal Styles
+
+.results-wrap { display:grid; width:380px; margin:0 auto; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:2em; }
+
+.game-results {
+  .word { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:0.5em; margin-bottom:0.5em; }
+  .block { aspect-ratio:1 / 1; border-radius:5px;
+    &.state-0 { background-color:rgb(167, 167, 167);  }
+    &.state-1 { background-color:rgb(243, 212, 75); }
+    &.state-2 { background-color:rgb(98, 216, 98); }
+  }
+}
+
+.win-percentage {
+  canvas { width:100%; aspect-ratio:1 / 1; background-colorr:#efefef; }
+}
+
+#win-modal {
+  .reset-button { font-size:2em; background-color:#333; padding:0.3em 2em 0.5em 2em; border-radius:0.5em; color:#fff; display:table; margin:1em auto; }
+}
