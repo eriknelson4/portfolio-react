@@ -48,7 +48,7 @@ const PortfolioModal = ({ currentModal }) => {
           {
             currentModal.images.map((image, i) => (
               <img
-                key={ i }
+                key={ `image-${ i }` }
                 loading="lazy"
                 aria-hidden={ i == currentIndex ? false : true }
                 src={ image }

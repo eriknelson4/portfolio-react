@@ -1,0 +1,15 @@
+[
+  { "title": "HTML", "imgurl": "html.png" },
+  { "title": "CSS", "imgurl": "css.png" },
+  { "title": "JavaScript", "imgurl": "javascript.png" },
+  { "title": "TypeScript", "imgurl": "typescript.png" },
+  { "title": "React", "imgurl": "react.png" },
+  { "title": "SASS", "imgurl": "sass.png" },
+  { "title": "Git", "imgurl": "git.png" },
+  { "title": "NodeJS", "imgurl": "node-js.png" },
+  { "title": "Docker", "imgurl": "docker.png" },
+  { "title": "Power Automate", "imgurl": "power-automate.png" },
+  { "title": "Google Cloud", "imgurl": "google-cloud.png" },
+  { "title": "Adobe Creative Cloud", "imgurl": "creative-cloud.png" },
+  { "title": "Magento", "imgurl": "magento.png" }
+]

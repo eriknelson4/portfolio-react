@@ -6,7 +6,7 @@ const UserGlyph = ({ setModalOpen }) => {
 
   return (
     <li>
-      <button onClick={() => { setModalOpen(true) }} className={ userRole + " pill" }>{ userRole }</button>
+      <button onClick={() => { setModalOpen(true) }} className={ `${userRole} pill` }>{ userRole }</button>
     </li>
   );
 }

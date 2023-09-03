@@ -20,8 +20,8 @@ export const UIProvider = ({ children }) => {
 }
 
 export const useUI = () => {
-  const allModal = useContext(UIContext);
+  const UI = useContext(UIContext);
   return {
-    ...allModal
+    ...UI
   }
 }

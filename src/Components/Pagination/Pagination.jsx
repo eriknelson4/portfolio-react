@@ -48,7 +48,7 @@ const Pagination = ({ setUsersPerPage, usersPerPage, totalUsers, currentPage, pa
             return ( <span key={ `ellipsis-${ i }` } className="ellipsis">...</span> )
           }
           return (
-            <button key={ number } onClick={ () => paginate(number) } className="page-link short" aria-selected={ (currentPage == number) }>
+            <button key={ `page-${number}` } onClick={ () => paginate(number) } className="page-link short" aria-selected={ (currentPage == number) }>
               { number }
             </button>
           )
@@ -67,6 +67,7 @@ const Pagination = ({ setUsersPerPage, usersPerPage, totalUsers, currentPage, pa
           <option value="100">100</option>
         </select>
       </div>
+
     </nav>
 
   );

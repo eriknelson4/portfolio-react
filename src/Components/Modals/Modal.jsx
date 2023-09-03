@@ -15,16 +15,16 @@ export const Modal = ({ id, children, isOpen, setModalOpen }) => {
   }
 
   useEffect(() => {
-    const el = modalElement.current;
+    const modal = modalElement.current;
     if (isOpen) {
       document.getElementById('root').classList.add('modal-open');
       document.querySelector('body').addEventListener('click', bodyClickHandler);
-      el.showModal();
+      modal.showModal();
     }
     if (isOpen === false) {
       document.getElementById('root').classList.remove('modal-open');
       document.querySelector('body').removeEventListener('click', bodyClickHandler);
-      el.close();
+      modal.close();
     }
   }, [isOpen]);
 

@@ -3,7 +3,7 @@ import { Modal } from '../../Components/Modals/Modal';
 import Standard from '../../Templates/Standard';
 import PortfolioItem from './PortfolioItem';
 import Website from './Website';
-import PortfolioModal from '../../Components/PortfolioModal/PortfolioModal';
+import PortfolioModal from './PortfolioModal';
 import portfolioItems from './portfolioItems.json';
 import websites from './websites.json';
 
@@ -26,11 +26,11 @@ const Portfolio = () => {
     <>
       <Standard>
 
-        <section id="portfolio" role="tabpanel">
+        <article id="portfolio" role="tabpanel">
 
           <h2>Portfolio</h2>
 
-          <div className="wrap main-items">
+          <section className="wrap main-items">
 
             {
               portfolioItems.map((item) => {
@@ -47,11 +47,11 @@ const Portfolio = () => {
               })
             }
 
-          </div>
+          </section>
 
           <h2>Websites</h2>
 
-          <div className="website-wrap">
+          <section className="website-wrap">
 
             {
               websites.map((item) => {
@@ -67,9 +67,9 @@ const Portfolio = () => {
               })
             }
 
-          </div>
+          </section>
 
-        </section>
+        </article>
 
       </Standard>
 
